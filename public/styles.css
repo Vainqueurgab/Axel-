@@ -1,122 +1,183 @@
 body {
-     padding: 20px;
-     background-color: #f8f9fa;
-     font-family: 'Poppins', sans-serif;
+		 padding: 20px;
+		 background-image: url("https://i.imgur.com/5OODohI.jpeg");
+		 background-size: cover;
+		 font-family: 'Poppins', sans-serif;
+	   border-radius: 10px;
 }
  .container {
-     background-color: #ffffff;
-     border-radius: 10px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-     padding: 20px;
-     margin-top: 20px;
-     margin-bottom: 20px;
+	   color: #FFFF;
+	   background: #000000;
+		 border-radius: 10px;
+		 padding: 20px;
+	   box-shadow: 0 0 .2rem #fff,0 0 .2rem #fff, 0 0 2rem #1F51FF,
+            0 0 0.8rem #1F51FF,
+            0 0 2.8rem #1F51FF,
+            inset 0 0 1.3rem #1F51FF;
+		 margin-top: 20px;
+		 margin-bottom: 20px;
+	 outline: #FFFFFF;
 }
  h1 {
-     color: #343a40;
+		 color: #FFFFFF;
+		 font-size: 24px;
+		 margin-bottom: 15px;
 }
  label {
-     color: #495057;
+		 background-color: #FFFFFF;
+	   color: #343434;
+		 border-radius: 10px;
+		 font-weight: bold;
+		 margin-bottom: 5px;
+	   background-image: #FFFFFF;
 }
  .centered-textarea {
-     display: block;
-     margin: 0 auto;
-     width: 100%;
-     min-height: 150px;
-     padding: 10px;
-     box-sizing: border-box;
-     border: 1px solid #ced4da;
-     border-radius: 5px;
-     resize: none;
+		 color: #FFFFFF;
+		 display: flex;
+		 margin: 0 auto;
+		 width: 100%;
+		 min-height: 150px;
+		 padding: 10px;
+		 box-sizing: border-box;
+		 border: 1px solid #00ffff;
+		 border-radius: 5px;
+		 resize: none;
 }
  .btn-primary {
-     background-color: #007bff;
-     border: 1px solid #007bff;
+		 background-color: #00ff00;
+		 border: 1px solid #007bff;
+	   color: #261a1a;
 }
  .btn-primary:hover {
-     background-color: #0056b3;
-     border: 1px solid #0056b3;
+		 background-color: #76d674;
+		 border: 1px solid #0056b3;
 }
  .success-message {
-     color: green;
-     margin-top: 10px;
+		 color: green;
+		 margin-top: 10px;
 }
  .footer {
-     background-color: rgba(255, 255, 255, 0.7);
-     padding: 10px;
-     text-align: center;
-     font-size: 16px;
-     color: #555;
-     margin-top: 50px;
-     border-top: 1px solid #ccc;
-     position: fixed;
-     bottom: 0;
-     left: 0;
-     width: 100%;
+		 background-color: #E90207 46%,  #ff8c00 100%;
+		 padding: 10px;
+		 text-align: center;
+		 font-size: 16px;
+		 color: #FFFFFF;
+		 margin-top: 50px;
+		 border-top: 1px solid #blue;
+		 position: fixed;
+		 bottom: 0;
+		 left: 0;
+		 width: 100%;
 }
  .footer p {
-     margin: 0;
-     display: inline-block;
-     margin-right: 30px;
+		 margin: 0;
+		 display: inline-block;
+		 margin-right: 30px;
 }
  .container-buttons {
-     margin-top: 20px;
-     text-align: center;
+		 margin-top: 20px;
+		 text-align: center;
 }
  .container-buttons .btn {
-     margin: 5px;
+		 margin: 5px;
 }
 
  #result {
-     padding: 10px;
-     margin-top: 20px;
-     border-radius: 5px;
+		 padding: 10px;
+		 margin-top: 20px;
+		 border-radius: 5px;
 }
  .center-placeholder::placeholder {
-     text-align: center;
+		 text-align: center;
 }
 
 .form-check {
-  display: flex;
-  margin-top: 10px;
-  padding: 14px;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease; 
-  border-color: #ccc;
-  background-color: #fff;
+	display: flex;
+	margin-top: 10px;
+	padding: 14px;
+	align-items: center;
+	border: 1px solid #red;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, border-color 0.3s ease; 
+	border-color: #ccc;
+	background-color: #fff;
 }
 
 .form-check:hover {
-  background-color: #f0f0f0; 
-  border-color: #333; 
+	background-color: #f5f5; 
+	border-color: #f8f8f8; 
 }
 
 .form-check-input {
-  margin-right: 10px; 
-  opacity: 0;
+	margin-right: 10px; 
+	opacity: 0;
 }
 
 .disable {
-  display: none;
+	display: none;
 }
 
-#inputOfPrefix, #inputOfAdmin {
-  padding: 13px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease; 
-  border-color: #ccc;
-  background-color: #fff;
+#inputOfPrefix, #inputOfAdmin,
+#inputOfBotName {
+	padding: 13px;
+	width: 200px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, border-color 0.3s ease; 
+	border-color: #ccc;
+	background-color: #fff;
 }
 #listOfCommands, #listOfCommandsEvent, #prefixOfCommands, #adminOfCommands {
-  border: none !important;
+	border: none !important;
 }
 
-#listOfCommands:not(.modal), #listOfCommandsEvent:not(.modal), #prefixOfCommands:not(.modal), #adminOfCommands:not(.modal) {
-  box-shadow: none !important;
+#listOfCommands:not(.modal), #listOfCommandsEvent:not(.modal), #prefixOfCommands:not(.modal),
+#adminOfCommands:not(.modal) {
+	box-shadow: none !important;
 }
 
+div {
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+video {
+	max-width: 100%;
+	max-height: 70%;
+	margin-bottom: 20px;
+	cursor: default;
+	outline: 2px solid #FFFFFF;
+	background: linear-gradient(135deg, aqua, rgb(0, 255, 0), rgb(255, 255, 0), orange, red, rgb(255, 0, 234));
+	border-radius: 10px;
+	animation: animate 1.5s linear infinite;
+	 border: 2px solid transparent;
+animation: neon-border 2s linear infinite alternate; /* Adjust animation duration and timing */
+	}
+
+ @keyframes neon-border {
+	 from {
+		border-color: #ff0000; /* Start color */
+	box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Adjust shadow colors and sizes */
+}
+to {
+	border-color: #00ff00; /* End color */
+	box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00; /* Adjust shadow colors and sizes */
+}
+ }
+
+#video-container {
+	width: 100%;
+	height: 70%;
+	margin-bottom: 20px;
+	display: flex;
+}
+
+#video {
+	 width: 100%;
+	 border-radius: 10px;
+	 height: 70%%;
+	 object-fit: cover;
+	 margin: auto;
+}
