@@ -1,43 +1,5 @@
-const axios = require('axios');
+const axios=require('axios');
 
-module.exports.config = {
-	name: "ai",
-	version: "1.0.0",
-	hasPermission: 0,
-	credits: "cliff",//api by jonell
-	description: "Gpt architecture",
-	usePrefix: false,
-	commandCategory: "GPT4",
-	cooldowns: 5,
-};
+const apiEndpoint='https://sandipapi.onrender.com/gpt';
 
-module.exports.run = async function ({ api, event, args }) {
-	try {
-		const { messageID, messageReply } = event;
-		let prompt = args.join(' ');
-
-		if (messageReply) {
-			const repliedMessage = messageReply.body;
-			prompt = `${repliedMessage} ${prompt}`;
-		}
-
-		if (!prompt) {
-			return api.sendMessage('Please provide a prompt to generate a text response.\nExample: GPT4 What is the meaning of life?', event.threadID, messageID);
-		}
-
-		const gpt4_api = `https://ai-chat-gpt-4-lite.onrender.com/api/hercai?question=${encodeURIComponent(prompt)}`;
-
-		const response = await axios.get(gpt4_api);
-
-		if (response.data && response.data.reply) {
-			const generatedText = response.data.reply;
-			api.sendMessage({ body: generatedText, attachment: null }, event.threadID, messageID);
-		} else {
-			console.error('API response did not contain expected data:', response.data);
-			api.sendMessage(`❌ An error occurred while generating the text response. Please try again later. Response data: ${JSON.stringify(response.data)}`, event.threadID, messageID);
-		}
-	} catch (error) {
-		console.error('Error:', error);
-		api.sendMessage(`❌ An error occurred while generating the text response. Please try again later. Error details: ${error.message}`, event.threadID, event.messageID);
-	}
-};
+module.exports={config:{name:"ai",version:1.0,author:"coffee",longDescription:"AI",category:"ai",guide:{en:"{p}questions"}},onStart:async()=>{},onChat:async({event,message})=>{try{const{body}=event;if(!(body&&body.toLowerCase().startsWith("ai")))return;const prompt=body.substring(2).trim();if(!prompt)return await message.reply("𝗣𝗥𝗢𝗗𝗜𝗚𝗬|🟢✅\n━━━━━━━━━━━━━━━\nHi! Ask me anything!\n━━━━━━━━━━━━━━━");const response=await axios.get(`${apiEndpoint}?prompt=${encodeURIComponent(prompt)}`);if(response.status===200)await message.reply(`𝗣𝗥𝗢𝗗𝗜𝗚𝗬 𝗔𝗡𝗦𝗪𝗘𝗥𝗘𝗗|✅\n━━━━━━━━━━━━━━━\n${response.data.answer}\n━━━━━━━━━━━━━━━`);else throw new Error(`Failed to fetch data. Status: ${response.status}`);}catch(error){console.error("Error:",error.message);}}};
