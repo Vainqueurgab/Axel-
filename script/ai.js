@@ -1,5 +1,32 @@
-const axios=require('axios');
+const { get } = require('axios');
 
-const apiEndpoint='https://sandipapi.onrender.com/gpt';
+module.exports.config = {
+	name: "ai",
+	version: "1.0.0",
+	role: 0,
+	hasPrefix: false,
+	credits: "Deku",
+	description: "Talk to AI with continuous conversation.",
+	aliases:  [],
+	usages: "[prompt]",
+	cooldown: 0,
+};
 
-module.exports={config:{name:"ai",version:1.0,author:"coffee",longDescription:"AI",category:"ai",guide:{en:"{p}questions"}},onStart:async()=>{},onChat:async({event,message})=>{try{const{body}=event;if(!(body&&body.toLowerCase().startsWith("ai")))return;const prompt=body.substring(2).trim();if(!prompt)return await message.reply("𝗣𝗥𝗢𝗗𝗜𝗚𝗬|🟢✅\n━━━━━━━━━━━━━━━\nHi! Ask me anything!\n━━━━━━━━━━━━━━━");const response=await axios.get(`${apiEndpoint}?prompt=${encodeURIComponent(prompt)}`);if(response.status===200)await message.reply(`𝗣𝗥𝗢𝗗𝗜𝗚𝗬 𝗔𝗡𝗦𝗪𝗘𝗥𝗘𝗗|✅\n━━━━━━━━━━━━━━━\n${response.data.answer}\n━━━━━━━━━━━━━━━`);else throw new Error(`Failed to fetch data. Status: ${response.status}`);}catch(error){console.error("Error:",error.message);}}};
+module.exports.run = async function({ api, event, args }) {
+	function sendMessage(msg) {
+		api.sendMessage(msg, event.threadID, event.messageID);
+	}
+
+	if (!args[0]) return sendMessage('Please provide a question first.');
+
+	const prompt = args.join(" ");
+	const url = `https://deku-rest-api.replit.app/gpt4?prompt=${encodeURIComponent(prompt)}&uid=${event.senderID}`;
+
+	try {
+		const response = await get(url);
+		const data = response.data;
+		return sendMessage(data.gpt4);
+	} catch (error) {
+		return sendMessage(error.message);
+	}
+}
