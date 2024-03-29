@@ -18,7 +18,7 @@ module.exports.run = async ({ api, event, args }) => {
 		try {
 			const response = await axios.get("https://tempmail-api-r6cw.onrender.com/gen");
 			const responseData = response.data.email;
-			api.sendMessage(`✅Here is your email:\n\n💌Email:${responseData}\n\n🖥️Created by Sakibin_X_Imtiaz Server✅`, event.threadID);
+			api.sendMessage(`✅𝗛𝗘𝗥𝗘 𝗜𝗦 𝗬𝗢𝗨𝗥 𝗘𝗠𝗔𝗜𝗟:\n\n✉️Email:${responseData}\n\n🖥️𝗥𝗘𝗡𝗗𝗘𝗥🫎𝗘𝗠𝗔𝗜𝗟✅`, event.threadID);
 		} catch (error) {
 			console.error("🔴 𝖤𝗋𝗋𝗈𝗋", error);
 			api.sendMessage("🔴 𝖴𝗇𝖾𝗑𝗉𝖾𝖼𝗍𝖾𝖽 𝖤𝗋𝗋𝗈𝗋, 𝖶𝗁𝗂𝗅𝖾 𝖿𝖾𝗍𝖼𝗁𝗂𝗇𝗀 𝖾𝗆𝖺𝗂𝗅 𝖺𝖽𝖽𝗋𝖾𝗌𝗌...", event.threadID);
