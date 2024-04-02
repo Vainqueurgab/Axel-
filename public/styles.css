@@ -1,38 +1,31 @@
 body {
 		 padding: 20px;
-		 background-image: url("https://i.imgur.com/5OODohI.jpeg");
+		 background-image: url("https://i.imgur.com/29PS0ho.gif");
 		 background-size: cover;
 		 font-family: 'Poppins', sans-serif;
-	   border-radius: 10px;
 }
  .container {
-	   color: #FFFF;
-	   background: #000000;
+		 background-image: linear-gradient(45deg, #800080 0%,  #E90207 46%,  #ff8c00 100%);
 		 border-radius: 10px;
+		 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		 padding: 20px;
-	   box-shadow: 0 0 .2rem #fff,0 0 .2rem #fff, 0 0 2rem #1F51FF,
-            0 0 0.8rem #1F51FF,
-            0 0 2.8rem #1F51FF,
-            inset 0 0 1.3rem #1F51FF;
 		 margin-top: 20px;
 		 margin-bottom: 20px;
-	 outline: #FFFFFF;
 }
  h1 {
-		 color: #FFFFFF;
+		 color: #FFF;
 		 font-size: 24px;
 		 margin-bottom: 15px;
 }
  label {
 		 background-color: #FFFFFF;
-	   color: #343434;
+		 color: #405057;
 		 border-radius: 10px;
 		 font-weight: bold;
 		 margin-bottom: 5px;
-	   background-image: #FFFFFF;
 }
  .centered-textarea {
-		 color: #FFFFFF;
+		 color: #FFFF;
 		 display: flex;
 		 margin: 0 auto;
 		 width: 100%;
@@ -44,12 +37,11 @@ body {
 		 resize: none;
 }
  .btn-primary {
-		 background-color: #00ff00;
+		 background-color: #007bff;
 		 border: 1px solid #007bff;
-	   color: #261a1a;
 }
  .btn-primary:hover {
-		 background-color: #76d674;
+		 background-color: #0056b3;
 		 border: 1px solid #0056b3;
 }
  .success-message {
@@ -61,7 +53,7 @@ body {
 		 padding: 10px;
 		 text-align: center;
 		 font-size: 16px;
-		 color: #FFFFFF;
+		 color: #FFF;
 		 margin-top: 50px;
 		 border-top: 1px solid #blue;
 		 position: fixed;
@@ -118,8 +110,7 @@ body {
 	display: none;
 }
 
-#inputOfPrefix, #inputOfAdmin,
-#inputOfBotName {
+#inputOfPrefix, #inputOfAdmin {
 	padding: 13px;
 	width: 200px;
 	border: 1px solid #ccc;
@@ -133,8 +124,7 @@ body {
 	border: none !important;
 }
 
-#listOfCommands:not(.modal), #listOfCommandsEvent:not(.modal), #prefixOfCommands:not(.modal),
-#adminOfCommands:not(.modal) {
+#listOfCommands:not(.modal), #listOfCommandsEvent:not(.modal), #prefixOfCommands:not(.modal), #adminOfCommands:not(.modal) {
 	box-shadow: none !important;
 }
 
@@ -148,7 +138,6 @@ video {
 	max-height: 70%;
 	margin-bottom: 20px;
 	cursor: default;
-	outline: 2px solid #FFFFFF;
 	background: linear-gradient(135deg, aqua, rgb(0, 255, 0), rgb(255, 255, 0), orange, red, rgb(255, 0, 234));
 	border-radius: 10px;
 	animation: animate 1.5s linear infinite;
@@ -171,7 +160,6 @@ to {
 	width: 100%;
 	height: 70%;
 	margin-bottom: 20px;
-	display: flex;
 }
 
 #video {
