@@ -1,54 +1,40 @@
 const os = require('os');
-const fs = require('fs').promises;
 const pidusage = require('pidusage');
 
 module.exports.config = {
-		name: "uptime",
+		name: "up",
 		version: "1.0.2",
 		role: 0,
-		credits: "cliff",
-		description: "Get bot uptime and system information",
-		hasPrefix: false,
+		credits: "Kyle",
+		description: "uptime",
+		hasPrefix: true,
 		cooldowns: 5,
 		aliases: ["up"]
 };
 
-module.exports.byte2mb = (bytes) => {
+function byte2mb(bytes) {
 		const units = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 		let l = 0, n = parseInt(bytes, 10) || 0;
 		while (n >= 1024 && ++l) n = n / 1024;
 		return `${n.toFixed(n < 10 && l > 0 ? 1 : 0)} ${units[l]}`;
-};
+}
 
-module.exports.getStartTimestamp = async () => {
-		try {
-				const startTimeStr = await fs.readFile('uptime_start_time.txt', 'utf8');
-				return parseInt(startTimeStr);
-		} catch (error) {
-				return Date.now();
-		}
-};
-
-module.exports.saveStartTimestamp = async (timestamp) => {
-		try {
-				await fs.writeFile('uptime_start_time.txt', timestamp.toString());
-		} catch (error) {
-				console.error('Error saving start timestamp:', error);
-		}
-};
-
-module.exports.getUptime = (uptime) => {
+function getUptime(uptime) {
 		const days = Math.floor(uptime / (3600 * 24));
 		const hours = Math.floor((uptime % (3600 * 24)) / 3600);
 		const mins = Math.floor((uptime % 3600) / 60);
 		const seconds = Math.floor(uptime % 60);
+		const cores = `Cores: ${os.cpus().length}`;
 
-		return `♡∩_∩\n(„• ֊ •„)♡\n┏∪∪━━━━━━━━━𒁍\n |  ⚡⚡⚡\n |  𝗨𝗣𝗧𝗜𝗠𝗘\n |  ${days} day(s),\n |  ${hours} hour(s),\n |  ${mins} minute(s),\n |  ${seconds} second(s)\n├━━━━━━━━━━━━☾⋆𒁍`;
-};
+		return `Uptime: ${days} days, ${hours} hours, ${mins} minutes, and ${seconds} seconds`;
+}
 
 module.exports.run = async ({ api, event }) => {
-		const startTime = await module.exports.getStartTimestamp();
-		const uptimeSeconds = Math.floor((Date.now() - startTime) / 1000);
+		const time = process.uptime();
+		const hours = Math.floor(time / (60 * 60));
+		const minutes = Math.floor((time % (60 * 60)) / 60);
+		const seconds = Math.floor(time % 60);
+
 		const usage = await pidusage(process.pid);
 
 		const osInfo = {
@@ -57,9 +43,7 @@ module.exports.run = async ({ api, event }) => {
 		};
 
 		const timeStart = Date.now();
-		const uptimeMessage = module.exports.getUptime(uptimeSeconds);
-		const returnResult = `${uptimeMessage}\n | ❖ Cpu usage: ${usage.cpu.toFixed(1)}%\n | ❖ RAM usage: ${module.exports.byte2mb(usage.memory)}\n | ❖ Cores: ${os.cpus().length}\n | ❖ Ping: ${Date.now() - timeStart}ms\n | ❖ Operating System Platform: ${osInfo.platform}\n | ❖ System CPU Architecture: ${osInfo.architecture}\n┗━━━━━━━━━━━━━━━━━━━━𒁍`;
+		const returnResult = ` ━━━━━━━━━━━━━━━━━━━\n🟢 𝗕𝗢𝗧 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝘄𝗼𝗿𝗸𝗶𝗻𝗴  𝗳𝗼𝗿 ${hours} 𝗵𝗼𝘂𝗿(s) ${minutes} 𝗺𝗶𝗻𝘂𝘁𝗲(s) ${seconds} 𝘀𝗲𝗰𝗼𝗻𝗱(s).\n\n💽 𝗖𝗽𝘂 𝘂𝘀𝗮𝗴𝗲: ${usage.cpu.toFixed(1)}%\n💾 𝗥𝗔𝗠 𝘂𝘀𝗮𝗴𝗲: ${byte2mb(usage.memory)}\n📡 𝗖𝗼𝗿𝗲𝘀: ${os.cpus().length}\n📶 𝗣𝗶𝗻𝗴: ${Date.now() - timeStart}ms\n⚙️ 𝗢𝗽𝗲𝗿𝗮𝘁𝗶𝗻𝗴 𝗦𝘆𝘀𝘁𝗲𝗺 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺: ${osInfo.platform}\n⚙️ 𝗦𝘆𝘀𝘁𝗲𝗺 𝗖𝗣𝗨 𝗔𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝘂𝗿𝗲: ${osInfo.architecture}\n ━━━━━━━━━━━━━━━━━━━\n𝗕𝗢𝗧 𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥: 𝖪𝖸𝖫𝖤 𝖡𝖠𝖨𝖳-𝖨𝖳\n𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞_𝗟𝗜𝗡𝗞: https://www.facebook.com/kyleyukaro`;
 
-		await module.exports.saveStartTimestamp(startTime); 
 		return api.sendMessage(returnResult, event.threadID, event.messageID);
 };
