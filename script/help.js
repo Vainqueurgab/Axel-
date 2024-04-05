@@ -25,7 +25,7 @@ module.exports.run = async function({
       let page = 1;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `「𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧」📃📃:\n\n`;
+      let helpMessage = `📝📝「𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧」📝📝:\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
         helpMessage += `\t${i + 1}. 「 ${prefix}${commands[i]} 」\n`;
       }
@@ -33,18 +33,18 @@ module.exports.run = async function({
       eventCommands.forEach((eventCommand, index) => {
         helpMessage += `\t${index + 1}. 「 ${prefix}${eventCommand} 」\n`;
       });
-      helpMessage += `\n𝗣𝗔𝗚𝗘 ${page}/${Math.ceil(commands.length / pages)}.「𝗧𝗢 𝗩𝗜𝗘𝗪 𝗧𝗛𝗘 𝗡𝗘𝗫𝗧 𝗣𝗔𝗚𝗘」, 「𝗧𝗬𝗣𝗘 '${prefix}𝗛𝗘𝗟𝗣 𝗣𝗔𝗚𝗘 𝗡𝗨𝗠𝗕𝗘𝗥'. 𝗧𝗢 𝗩𝗜𝗘𝗪 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡 𝗔𝗕𝗢𝗨𝗧 𝗔 𝗦𝗣𝗘𝗖𝗜𝗙𝗜𝗖 𝗖𝗢𝗠𝗠𝗔𝗡𝗗, 𝗧𝗬𝗣𝗘 '${prefix}𝗛𝗘𝗟𝗣 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗡𝗔𝗠𝗘」'.`;
+      helpMessage += `\n𝗣𝗔𝗚𝗘 ${page}/${Math.ceil(commands.length / pages)}.「 𝗧𝗢 𝗩𝗜𝗘𝗪 𝗧𝗛𝗘 𝗡𝗘𝗫𝗧 𝗣𝗔𝗚𝗘」, 「𝗧𝗬𝗣𝗘 '${prefix}𝗛𝗘𝗟𝗣 𝗣𝗔𝗚𝗘 𝗡𝗨𝗠𝗕𝗘𝗥'. 𝗧𝗢 𝗩𝗜𝗘𝗪 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡 𝗔𝗕𝗢𝗨𝗧 𝗔 𝗦𝗣𝗘𝗖𝗜𝗙𝗜𝗖 𝗖𝗢𝗠𝗠𝗔𝗡𝗗, 𝗧𝗬𝗣𝗘 '${prefix}𝗛𝗘𝗟𝗣 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗡𝗔𝗠𝗘 」'.`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else if (!isNaN(input)) {
       const page = parseInt(input);
       const pages = 20;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `「𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧」📃📃:\n\n`;
+      let helpMessage = `📝📝「 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧 」📝📝:\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
         helpMessage += `\t${i + 1}. 「 ${prefix}${commands[i]} 」\n`;
       }
-      helpMessage += '\n「𝗘𝗩𝗘𝗡𝗧 𝗟𝗜𝗦𝗧」:\n\n';
+      helpMessage += '\n🎇「 𝗘𝗩𝗘𝗡𝗧 𝗟𝗜𝗦𝗧 」🎇:\n\n';
       eventCommands.forEach((eventCommand, index) => {
         helpMessage += `\t${index + 1}. 「 ${prefix}${eventCommand} 」\n`;
       });
