@@ -164,13 +164,12 @@ body {
 	border-radius: 8px;
 	cursor: pointer;
 	transition: background-color 0.3s ease, border-color 0.3s ease; 
-	border-color: #ccc;
-	background-color: #fff;
+	
 }
 
 .form-check:hover {
-	background-color: #f5f5; 
-	border-color: #f8f8f8; 
+	background-color: none; 
+	border-color: none; 
 }
 
 .form-check-input {
@@ -190,8 +189,8 @@ body {
 	border-radius: 8px;
 	cursor: pointer;
 	transition: background-color 0.3s ease, border-color 0.3s ease; 
-	border-color: #ccc;
-	background-color: #fff;
+	border-color: none;
+	background-color: none;
 }
 #listOfCommands, #listOfCommandsEvent, #prefixOfCommands, #adminOfCommands {
 	border: none !important;
