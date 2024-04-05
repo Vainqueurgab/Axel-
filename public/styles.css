@@ -113,15 +113,15 @@ body {
 	   color: #;
 }
  .btn-primary:hover {
-		 background-color: #808080;
-		 border: 1px solid #808080;
+		 background-color: #;
+		 border: 1px solid #;
 }
  .success-message {
 		 color: green;
 		 margin-top: 10px;
 }
  .footer {
-		 background-color: #808080%,  #808080%;
+		 background-color: #%,  #%;
 		 padding: 10px;
 		 text-align: center;
 		 font-size: 16px;
@@ -186,12 +186,12 @@ body {
 #inputOfBotName {
 	padding: 13px;
 	width: 200px;
-	border: 1px solid #;
+	border: 1px solid #808080;
 	border-radius: 8px;
 	cursor: pointer;
 	transition: background-color 0.3s ease, border-color 0.3s ease; 
-	border-color: #ccc;
-	background-color: #;
+	border-color: #808080;
+	background-color: #808080;
 }
 #listOfCommands, #listOfCommandsEvent, #prefixOfCommands, #adminOfCommands {
 	border: none !important;
