@@ -25,4 +25,3 @@ function start() {
 }
 
 start();
-
