@@ -1,4 +1,4 @@
-const axios = global.nodemodule["axios"];
+ const axios = global.nodemodule["axios"];
 
 module.exports.config = {
   name: "cookie",
