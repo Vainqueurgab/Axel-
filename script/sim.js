@@ -1,37 +1,46 @@
 const axios = require("axios");
-
+let isEnabled = true; 
 module.exports.config = {
-	name: "sim",
-	version: "1",
-	hasPermission: 0,
-	credits: "Grey",
-	description: "Simsimi",
-	usePrefix: false,
-   usages: "Message",
-	commandCategory: "...",
-	cooldowns: 0
+   name: "sim",
+   version: "4.3.7",
+   hasPermssion: 0,
+   credits: "Eugene Aguilar", 
+   description: "Chat with the best sim Chat",
+   commandCategory: "sim",
+   usages: "on/off",
+   cooldowns: 2
 };
 
-module.exports.run = async ({ api, event, args }) => {
-	try {
-		let message = args.join(" ");
-		if (!message) {
-			return api.sendMessage(`Please put Message`, event.threadID, event.messageID);
-		}
+module.exports.run = async function ({ api, event, args }) {
+    try {
+        if (args[0] === "off") {
+            isEnabled = false;
+            return api.sendMessage("SimSimi is now turned off.", event.threadID, event.messageID);
+        } else if (args[0] === "on") {
+            isEnabled = true;
+            return api.sendMessage("SimSimi is now turned on.", event.threadID, event.messageID);
+        } else {
+            const ask = args.join(" ");
+            const response = await axios.get(`https://eurix-api.replit.app/sim?ask=${encodeURIComponent(ask)}`);
+            const result = response.data.respond;
+            api.sendMessage(result, event.threadID, event.messageID);
+        }
+    } catch(error) {
+        api.sendMessage(`Error: ${error}`, event.threadID);
+        console.log(error);
+    }
+};
 
-		const typingStatus = await api.sendMessage("🔎 Searching for your query...", event.threadID);
-		
-		const response = await axios.get(`http://fi1.bot-hosting.net:6378/sim?query=${message}`);
-		const respond = response.data.respond;
+module.exports.handleEvent = async function ({ api, event }) {
+    try {
+        if (!isEnabled) return; 
 
-		setTimeout(() => {
-			api.sendMessage(respond, event.threadID, () => {
-				api.unsendMessage(typingStatus.messageID);
-			});
-		}, 2000);
-		
-	} catch (error) {
-		console.error("An error occurred:", error);
-		api.sendMessage("Oops! Something went wrong.", event.threadID, event.messageID);
-	}
+        const message = event.body.toLowerCase();
+        const response = await axios.get(`https://eurix-api.replit.app/sim?ask=${encodeURIComponent(message)}`);
+        const result = response.data.respond;
+        api.sendMessage(result, event.threadID, event.messageID);
+    } catch(error) {
+        api.sendMessage(`Error: ${error}`, event.threadID);
+        console.log(error);
+    }
 };
