@@ -42,7 +42,7 @@ module.exports.run = async function({
       let end = start + pages;
       let helpMessage = `※「 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃 」※:\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `\t${i + 1}. 「 ${prefix}${commands[i]} 」\n`;
+        helpMessage += `\t${i + 1}. ➪ ${prefix}${commands[i]} 🂱\n`;
       }
       helpMessage += '\n※「 𝙴𝚅𝙴𝙽𝚃 𝙻𝙸𝚂𝚃 」※:\n\n';
       eventCommands.forEach((eventCommand, index) => {
