@@ -120,9 +120,6 @@ const routes = [{
   path: '/online_user',
   file: 'online.html'
 }, ];
-  path:'/shoti_video',
-  file: 'shoti.html'
-}, ];
   path:'/analog_clock',
   file: 'clock.html'
 }, ];
