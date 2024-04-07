@@ -25,30 +25,30 @@ module.exports.run = async function({
       let page = 1;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `📝📝「𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧」📝📝:\n\n`;
+      let helpMessage = `※「 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃 」※:\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `\t${i + 1}. 「 ${prefix}${commands[i]} 」\n`;
+        helpMessage += `\t${i + 1}. ➪ ${prefix}${commands[i]} 🂱\n`;
       }
-      helpMessage += '\n𝗘𝗩𝗘𝗡𝗧 𝗟𝗜𝗦𝗧:\n\n';
+      helpMessage += '\n※「 𝙴𝚅𝙴𝙽𝚃 𝙻𝙸𝚂𝚃 」※:\n\n';
       eventCommands.forEach((eventCommand, index) => {
-        helpMessage += `\t${index + 1}. 「 ${prefix}${eventCommand} 」\n`;
+        helpMessage += `\t${index + 1}. ※${prefix}${eventCommand} ※\n`;
       });
-      helpMessage += `\n𝗣𝗔𝗚𝗘 ${page}/${Math.ceil(commands.length / pages)}.「 𝗧𝗢 𝗩𝗜𝗘𝗪 𝗧𝗛𝗘 𝗡𝗘𝗫𝗧 𝗣𝗔𝗚𝗘」, 「𝗧𝗬𝗣𝗘 '${prefix}𝗛𝗘𝗟𝗣 𝗣𝗔𝗚𝗘 𝗡𝗨𝗠𝗕𝗘𝗥'. 𝗧𝗢 𝗩𝗜𝗘𝗪 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡 𝗔𝗕𝗢𝗨𝗧 𝗔 𝗦𝗣𝗘𝗖𝗜𝗙𝗜𝗖 𝗖𝗢𝗠𝗠𝗔𝗡𝗗, 𝗧𝗬𝗣𝗘 '${prefix}𝗛𝗘𝗟𝗣 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗡𝗔𝗠𝗘 」'.`;
+      helpMessage += `\n𝙿𝙰𝙶𝙴 ${page}/${Math.ceil(commands.length / pages)}.「 𝚃𝙾 𝚅𝙸𝙴𝚆 𝚃𝙷𝚆 𝙽𝙴𝚇𝚃 𝙿𝙰𝙶𝙴 」, 「 𝚃𝚈𝙿𝙴 '${prefix}𝙷𝙴𝙻𝙿 𝙿𝙰𝙶𝙴 𝙽𝚄𝙼𝙱𝙴𝚁'. 𝚃𝙾 𝚅𝙸𝙴𝚆 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽 𝙰𝙱𝙾𝚄𝚃 𝙰 𝚂𝙿𝙴𝙲𝙸𝙵𝙸𝙲 𝙲𝙾𝙼𝙼𝙰𝙽𝙳, 𝚃𝚈𝙿𝙴 '${prefix}𝙷𝙴𝙻𝙿 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙽𝙰𝙼𝙴 」'.`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else if (!isNaN(input)) {
       const page = parseInt(input);
       const pages = 20;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `📝📝「 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧 」📝📝:\n\n`;
+      let helpMessage = `※「 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃 」※:\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
         helpMessage += `\t${i + 1}. 「 ${prefix}${commands[i]} 」\n`;
       }
-      helpMessage += '\n🎇「 𝗘𝗩𝗘𝗡𝗧 𝗟𝗜𝗦𝗧 」🎇:\n\n';
+      helpMessage += '\n※「 𝙴𝚅𝙴𝙽𝚃 𝙻𝙸𝚂𝚃 」※:\n\n';
       eventCommands.forEach((eventCommand, index) => {
         helpMessage += `\t${index + 1}. 「 ${prefix}${eventCommand} 」\n`;
       });
-      helpMessage += `\n𝗣𝗔𝗚𝗘 ${page} of ${Math.ceil(commands.length / pages)}`;
+      helpMessage += `\n𝙿𝙰𝙶𝙴 ${page} of ${Math.ceil(commands.length / pages)}`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else {
       const command = [...Utils.handleEvent, ...Utils.commands].find(([key]) => key.includes(input?.toLowerCase()))?.[1];
