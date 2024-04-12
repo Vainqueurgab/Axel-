@@ -25,30 +25,30 @@ module.exports.run = async function({
       let page = 1;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `※「 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃 」※:\n\n`
+      let helpMessage = ` ⋆☾⋆⁺₊✧𝐌𝐘 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐋𝐈𝐒𝐓✩ ♬ ₊.:\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `\t${i + 1}. ➪ ${prefix}${commands[i]} 🂱\n`;
+        helpMessage += `\t${i + 1}. ⋆☾⋆⁺₊✧ ${prefix}${commands[i]} ✩ ♬ ₊.\n`;
       }
-      helpMessage += '\n※「 𝙴𝚅𝙴𝙽𝚃 𝙻𝙸𝚂𝚃 」※:\n\n'
+      helpMessage += '˖ ࣪ ᪥𝐓𝐇𝐄 𝐄𝐕𝐄𝐍𝐓 𝐋𝐈𝐒𝐓𐀔 𓂃:\n\n';
       eventCommands.forEach((eventCommand, index) => {
-        helpMessage += `\t${index + 1}. ※${prefix}${eventCommand} ※\n`
+        helpMessage += `\t${index + 1}. ✩ ♬ ₊ ${prefix}${eventCommand} ⋆☾⋆⁺₊✧\n`;
       });
-      helpMessage += `\n𝙿𝙰𝙶𝙴 ${page}/${Math.ceil(commands.length / pages)}.「 𝚃𝙾 𝚅𝙸𝙴𝚆 𝚃𝙷𝚆 𝙽𝙴𝚇𝚃 𝙿𝙰𝙶𝙴 」, 「 𝚃𝚈𝙿𝙴 '${prefix}𝙷𝙴𝙻𝙿 𝙿𝙰𝙶𝙴 𝙽𝚄𝙼𝙱𝙴𝚁'. 𝚃𝙾 𝚅𝙸𝙴𝚆 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽 𝙰𝙱𝙾𝚄𝚃 𝙰 𝚂𝙿𝙴𝙲𝙸𝙵𝙸𝙲 𝙲𝙾𝙼𝙼𝙰𝙽𝙳, 𝚃𝚈𝙿𝙴 '${prefix}𝙷𝙴𝙻𝙿 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙽𝙰𝙼𝙴 」'.`;
+      helpMessage += `\n𝐏𝐀𝐆𝐄 ${page}/${Math.ceil(commands.length / pages)}. 𝐓𝐎 𝐕𝐈𝐄𝐖 𝐓𝐇𝐄 𝐍𝐄𝐗𝐓 𝐏𝐀𝐆𝐄, 𝐓𝐘𝐏𝐄 '${prefix}𝐇𝐄𝐋𝐏 𝐏𝐀𝐆𝐄 𝐍𝐔𝐌𝐁𝐄𝐑'. 𝐓𝐎 𝐕𝐈𝐄𝐖 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍 𝐀𝐁𝐎𝐔𝐓 𝐀 𝐒𝐏𝐄𝐂𝐈𝐅𝐈𝐂 𝐂𝐎𝐌𝐌𝐀𝐍𝐃, 𝐓𝐘𝐏E. '${prefix}𝐇𝐄𝐋𝐏 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐍𝐀𝐌E✩ ♬`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else if (!isNaN(input)) {
       const page = parseInt(input);
       const pages = 20;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `※「 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃 」※:\n\n`
+      let helpMessage = ` ⋆☾⋆⁺₊✧𝐌𝐘 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐋𝐈𝐒𝐓✩ ♬ ₊.:\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `\t${i + 1}. ➪ ${prefix}${commands[i]} 🂱\n`
+        helpMessage += `\t${i + 1}. ⋆☾⋆⁺₊✧ ${prefix}${commands[i]} ✩ ♬ ₊.\n`;
       }
-      helpMessage += '\n※「 𝙴𝚅𝙴𝙽𝚃 𝙻𝙸𝚂𝚃 」※:\n\n'
+      helpMessage += '˖ ࣪ ᪥𝐓𝐇𝐄 𝐄𝐕𝐄𝐍𝐓 𝐋𝐈𝐒𝐓𐀔 𓂃:\n\n';
       eventCommands.forEach((eventCommand, index) => {
-        helpMessage += `\t${index + 1}. 「 ${prefix}${eventCommand} 」\n`;
+        helpMessage += `\t${index + 1}.✩ ♬ ₊.${prefix}${eventCommand} ⋆☾⋆⁺₊✧\n`;
       });
-      helpMessage += `\n𝙿𝙰𝙶𝙴 ${page} of ${Math.ceil(commands.length / pages)}`;
+      helpMessage += `\n𝐏𝐀𝐆𝐄 ${page} of ${Math.ceil(commands.length / pages)}\n𝗕𝗧𝗪 𝗖𝗥𝗘𝗔𝗧𝗘 𝗬𝗢𝗨𝗥 𝗢𝗪𝗡 𝗕𝗢𝗧 𝗛𝗘𝗥𝗘\n➪kensei-gmcf.onrender.com`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else {
       const command = [...Utils.handleEvent, ...Utils.commands].find(([key]) => key.includes(input?.toLowerCase()))?.[1];
