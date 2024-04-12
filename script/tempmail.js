@@ -4,7 +4,7 @@ module.exports.config = {
 	name: "tempmail",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "imtiaz",
+	credits: "Kensei",
 	usePrefix: false,
    description: "( Gen Random Email address )",
 	commandCategory: "gen",
@@ -33,7 +33,7 @@ const inboxMessages = data[0].body;
 const inboxFrom = data[0].from;
 const inboxSubject = data[0].subject;
 const inboxDate = data[0].date;
-api.sendMessage(`•=====[Inbox]=====•\n👤From: ${inboxFrom}\n🔖Subject: ${inboxSubject}\n\n💌 Message: ${inboxMessages}\n🗓️Date: ${inboxDate}\𝙴𝙼𝙰𝙸𝙻 𝙵𝚁𝙾𝙼 𝙺𝙴𝙽𝚂𝙴𝙸 𝚁𝙴𝙽𝙳𝙴𝚁`, event.threadID);
+api.sendMessage(`•=====[Inbox]=====•\n👤From: ${inboxFrom}\n🔖Subject: ${inboxSubject}\n\n💌 Message: ${inboxMessages}\n🗓️Date: ${inboxDate}\n𝙴𝙼𝙰𝙸𝙻 𝙵𝚁𝙾𝙼 𝙺𝙴𝙽𝚂𝙴𝙸 𝚁𝙴𝙽𝙳𝙴𝚁`, event.threadID);
 		} catch (error) {
 			console.error("🔴 𝖤𝗋𝗋𝗈𝗋", error);
 			api.sendMessage("🔴 Can't get any mail yet first send mail", event.threadID);
