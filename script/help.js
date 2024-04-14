@@ -25,13 +25,13 @@ module.exports.run = async function({
       let page = 1;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = ` ⋆☾⋆⁺₊✧𝐌𝐘 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐋𝐈𝐒𝐓✩ ♬ ₊.:\n\n`;
+      let helpMessage = `[🔵ᗩƐᔕƬHƐᖇ-ᗷOƬ🔵]\n  ˚₊‧꒰ა /ᐠ - ˕ -マ໒꒱ ‧₊˚ \n━━━━━━━━━━━\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `\t${i + 1}. ⋆☾⋆⁺₊✧ ${prefix}${commands[i]} ✩ ♬ ₊.\n`;
+        helpMessage += `✪ \t${i + 1}▪﹝${prefix}${commands[i]}﹞\n`;
       }
-      helpMessage += '˖ ࣪ ᪥𝐓𝐇𝐄 𝐄𝐕𝐄𝐍𝐓 𝐋𝐈𝐒𝐓𐀔 𓂃:\n\n';
+      helpMessage += '━ 𝗘𝗩𝗘𝗡𝗧.𝗟𝗜𝗦𝗧- ˕ -ྀマ[🏷️]\n━━━━━━━━━━━\n';
       eventCommands.forEach((eventCommand, index) => {
-        helpMessage += `\t${index + 1}. ✩ ♬ ₊ ${prefix}${eventCommand} ⋆☾⋆⁺₊✧\n`;
+        helpMessage += `✦ \t${index + 1}▪﹝${prefix}${eventCommand}﹞\n`;
       });
       helpMessage += `\n𝐏𝐀𝐆𝐄 ${page}/${Math.ceil(commands.length / pages)}. 𝐓𝐎 𝐕𝐈𝐄𝐖 𝐓𝐇𝐄 𝐍𝐄𝐗𝐓 𝐏𝐀𝐆𝐄, 𝐓𝐘𝐏𝐄 '${prefix}𝐇𝐄𝐋𝐏 𝐏𝐀𝐆𝐄 𝐍𝐔𝐌𝐁𝐄𝐑'. 𝐓𝐎 𝐕𝐈𝐄𝐖 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍 𝐀𝐁𝐎𝐔𝐓 𝐀 𝐒𝐏𝐄𝐂𝐈𝐅𝐈𝐂 𝐂𝐎𝐌𝐌𝐀𝐍𝐃, 𝐓𝐘𝐏E. '${prefix}𝐇𝐄𝐋𝐏 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐍𝐀𝐌E✩ ♬`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
@@ -40,15 +40,15 @@ module.exports.run = async function({
       const pages = 20;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = ` ⋆☾⋆⁺₊✧𝐌𝐘 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐋𝐈𝐒𝐓✩ ♬ ₊.:\n\n`;
+      let helpMessage = `▪〉𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝘀 - 𝗟𝗜𝗦𝗧(－－〆)[🔖]\n━━━━━━━━━━━\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `\t${i + 1}. ⋆☾⋆⁺₊✧ ${prefix}${commands[i]} ✩ ♬ ₊.\n`;
+        helpMessage += `✪ \t${i + 1}▪﹝${prefix}${commands[i]}﹞\n`;
       }
-      helpMessage += '˖ ࣪ ᪥𝐓𝐇𝐄 𝐄𝐕𝐄𝐍𝐓 𝐋𝐈𝐒𝐓𐀔 𓂃:\n\n';
+      helpMessage += '━ 𝗘𝗩𝗘𝗡𝗧.𝗟𝗜𝗦𝗧- ˕ -ྀマ[🏷️]\n━━━━━━━━━━━\n';
       eventCommands.forEach((eventCommand, index) => {
-        helpMessage += `\t${index + 1}.✩ ♬ ₊.${prefix}${eventCommand} ⋆☾⋆⁺₊✧\n`;
+        helpMessage += `✦ \t${index + 1}▪﹝${prefix}${eventCommand}﹞\n`;
       });
-      helpMessage += `\n𝐏𝐀𝐆𝐄 ${page} of ${Math.ceil(commands.length / pages)}\n𝗕𝗧𝗪 𝗖𝗥𝗘𝗔𝗧𝗘 𝗬𝗢𝗨𝗥 𝗢𝗪𝗡 𝗕𝗢𝗧 𝗛𝗘𝗥𝗘\n➪kensei-gmcf.onrender.com`;
+      helpMessage += `\n▪[📚]𝗣𝗔𝗚𝗘 : [${page}] ฅ^.ᆺ.^ฅ\n━━━━━━━━━━━\n[🆔]𝗔𝗨𝗧𝗢𝗕𝗢𝗧 𝗖𝗥𝗘𝗔𝗧𝗘𝗗 𝗕𝗬 : 𝗔𝗡𝗝𝗔/𝗧𝗛𝗘𝗔🏅\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/thegodess.aesther\n[⚙️]𝗟𝗜𝗡𝗞 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 : `;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else {
       const command = [...Utils.handleEvent, ...Utils.commands].find(([key]) => key.includes(input?.toLowerCase()))?.[1];
@@ -91,7 +91,7 @@ module.exports.handleEvent = async function({
     messageID,
     body
   } = event;
-  const message = prefix ? 'This is my prefix: ' + prefix : "Sorry i don't have prefix";
+  const message = prefix ? '☁️𝗣𝗥𝗘𝗙𝗜𝗫^- ⩊ -マ₎𐒡☁️\n━━━━━━\n➤𝙲𝙼𝙳𝚂: ' + prefix : "𝙎𝙊𝙍𝙍𝙔........(ᵕ—ᴗ—) ♡\n━━━━━━━━━━━\nI don't have 𝚊 𝗣𝗥𝗘𝗙𝗜𝗫";
   if (body?.toLowerCase().startsWith('prefix')) {
     api.sendMessage(message, threadID, messageID);
   }
