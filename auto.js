@@ -308,16 +308,16 @@ async function accountLogin(state, enableCommands = [], prefix, admin = []) {
               });
             } else {
               const active = Math.ceil((sender.timestamp + delay * 1000 - now) / 1000);
-              api.sendMessage(`Please wait ${active} seconds before using the "${name}" command again.`, event.threadID, event.messageID);
+              api.sendMessage(`🕘 | 𝙒𝘼𝙄𝙏...[${active}s]❗❗\n⚫ too Rought 𝗦𝗘𝗠𝗣𝗔𝗜😿 🔴 `, event.threadID, event.messageID);
               return;
             }
           }
           if (event.body && !command && event.body?.toLowerCase().startsWith(prefix.toLowerCase())) {
-            api.sendMessage(`Invalid command please use ${prefix}help to see the list of available commands.`, event.threadID, event.messageID);
+            api.sendMessage(`〉 [${prefix}help📑] to see 𝗔𝗟𝗟 avalable 𝗖𝗠𝗗𝘴\n--------------------------------------\n🟢 𝘼𝙀-𝙎𝙏𝙃𝙀𝙍 ⚪`, event.threadID, event.messageID);
             return;
           }
           if (event.body && command && prefix && event.body?.toLowerCase().startsWith(prefix.toLowerCase()) && !aliases(command)?.name) {
-            api.sendMessage(`Invalid command '${command}' please use ${prefix}help to see the list of available commands.`, event.threadID, event.messageID);
+            api.sendMessage(`🔴-[${command}] 𝗗oesn't 𝗘𝗫𝗜𝗦𝗧⚫\n〉 [${prefix}help📑] to see all 𝗖𝗠𝗗𝘴\n--------------------------------------\n🟢 𝘼𝙀-𝙎𝙏𝙃𝙀𝙍 ⚪`, event.threadID, event.messageID);
             return;
           }
           for (const {
