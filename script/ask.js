@@ -37,7 +37,7 @@ module.exports.run = async function ({ api, event, args }) {
       }
     }
 
-    await api.sendMessage(`🟢ᗩƐᔕƬHƐᖇ⚪- ˕ •マ:\n━━━━━━━━━━━\n${formattedAnswer} ♡`, event.threadID);
+    await api.sendMessage(`🟢ᗩƐᔕƬHƐᖇ⚪- ˕ •マ:\n━━━━━━━━━━━\n${formattedAnswer} 🟡`, event.threadID);
   } catch (error) {
     console.error("Error:", error.message);
   }
