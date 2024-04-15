@@ -33,7 +33,7 @@ module.exports.run = async function({
       eventCommands.forEach((eventCommand, index) => {
         helpMessage += `✦ \t${index + 1}▪﹝${prefix}${eventCommand}﹞\n`;
       });
-      helpMessage += `\n𝐏𝐀𝐆𝐄 ${page}/${Math.ceil(commands.length / pages)}. 𝐓𝐎 𝐕𝐈𝐄𝐖 𝐓𝐇𝐄 𝐍𝐄𝐗𝐓 𝐏𝐀𝐆𝐄, 𝐓𝐘𝐏𝐄 '${prefix}𝐇𝐄𝐋𝐏 𝐏𝐀𝐆𝐄 𝐍𝐔𝐌𝐁𝐄𝐑'. 𝐓𝐎 𝐕𝐈𝐄𝐖 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍 𝐀𝐁𝐎𝐔𝐓 𝐀 𝐒𝐏𝐄𝐂𝐈𝐅𝐈𝐂 𝐂𝐎𝐌𝐌𝐀𝐍𝐃, 𝐓𝐘𝐏E. '${prefix}𝐇𝐄𝐋𝐏 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐍𝐀𝐌E✩ ♬`;
+      helpMessage += `\n\n▪[📚]𝗣𝗔𝗚𝗘 : [${page}] ฅ^.ᆺ.^ฅ\n━━━━━━━━━━━\n[🆔]𝗔𝗨𝗧𝗢𝗕𝗢𝗧 𝗖𝗥𝗘𝗔𝗧𝗘𝗗 𝗕𝗬 : 𝗔𝗡𝗝𝗔/𝗧𝗛𝗘𝗔🏅\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/thegodess.aesther\n[⚙️]𝗟𝗜𝗡𝗞 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 :https://aesther-anja-autobot.onrender.com/`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else if (!isNaN(input)) {
       const page = parseInt(input);
