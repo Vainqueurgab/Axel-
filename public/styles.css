@@ -74,10 +74,10 @@ body {
 	   background: #000000;
 		 border-radius: 10px;
 		 padding: 20px;
-	   box-shadow: 0 0 .2rem #fff,0 0 .2rem #fff, 0 0 2rem #1F51FF,
-            0 0 0.8rem #1F51FF,
-            0 0 2.8rem #1F51FF,
-            inset 0 0 1.3rem #1F51FF;
+	   box-shadow: 0 0 .2rem #fff,0 0 .2rem #fff, 0 0 2rem #00FF00,
+            0 0 0.8rem #00FF00,
+            0 0 2.8rem #00FF00,
+            inset 0 0 1.3rem #00FF00;
 		 margin-top: 20px;
 		 margin-bottom: 20px;
 	 outline: 2px solid #FFFFFF;
