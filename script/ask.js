@@ -10,7 +10,7 @@ const axios = require('axios');
 module.exports.config = {
   name: "ai",
   version: 1.0,
-  credits: "OtinXSandip",
+  credits: "aesther",//Api OtinXsandip
   description: "AI",
   hasPrefix: false,
   usages: "{pn} [prompt]",
