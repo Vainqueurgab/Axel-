@@ -22,7 +22,7 @@ module.exports.run = async function ({ api, event, args }) {
   try {
     const prompt = args.join(" ");
     if (!prompt) {
-      await api.sendMessage("🟢ᗩƐᔕƬHƐᖇ⚪- ˕ •マ:\n━━━━━━━━━━━\n /)___/)\n꒰ ˶• ༝ - ˶꒱ \n./づ~𝗔𝗜", event.threadID);
+      await api.sendMessage("🟢ᗩƐᔕƬHƐᖇ⚪- ˕ •マ:\n━━━━━━━━━━━\n /)___/)    ♡\n꒰ ˶• ༝ - ˶꒱ \n./づ~🍱", event.threadID);
       return;
     }
     const response = await axios.get(`https://sandipbaruwal.onrender.com/gpt?prompt=${encodeURIComponent(prompt)}`);
