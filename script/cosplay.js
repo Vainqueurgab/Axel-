@@ -5,7 +5,7 @@
   credits: "HungCho",
   description: "Random ảnh girl",
   commandCategory: "media",
-  usePrefix:true,
+  hasPrefix:true,
   usages: "japan",
   cooldowns: 5,
   dependencies: {
