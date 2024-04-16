@@ -5,7 +5,7 @@ module.exports.config = {
   credits: "Anup Kumar",
   description: "Pairing",
   commandCategory: "love", 
-  usePrefix:true,
+  hasPrefix:true,
   usages: "pair", 
   cooldowns: 40
 };
