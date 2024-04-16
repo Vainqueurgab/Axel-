@@ -1,74 +1,34 @@
+const axios = require('axios');
+
 module.exports.config = {
-	name: "obfuscate",
+	name: "blue",
 	version: "1.0.0",
 	role: 0,
-	credits: "cliff", //dont change the credits please, you can add modified by.....Remodified by.......converted by......
-	description: "Obfuscate JavaScript code",
-	aliases: ["ob"],
-	cooldown: 0,
+	credits: "Jonell Magallanes",
+	description: "cmd ai powered by blue",
 	hasPrefix: false,
-	usage: "",
+	usage:"blue [your content]",
+	cooldown: 5,
 };
 
-const JavaScriptObfuscator = require('javascript-obfuscator');
-
 module.exports.run = async function ({ api, event, args }) {
-	const obfuscationResult = JavaScriptObfuscator.obfuscate(
-		args.join(" "),
-		{
-			compact: false,
-			controlFlowFlattening: true,
-			controlFlowFlatteningThreshold: 1,
-			deadCodeInjection: false,
-			deadCodeInjectionThreshold: 0.4,
-			debugProtection: false,
-			debugProtectionInterval: 0,
-			disableConsoleOutput: false,
-			domainLock: [],
-			domainLockRedirectUrl: 'about:blank',
-			forceTransformStrings: [],
-			identifierNamesCache: null,
-			identifierNamesGenerator: 'hexadecimal',
-			identifiersDictionary: [],
-			identifiersPrefix: '',
-			ignoreImports: false,
-			inputFileName: '',
-			log: false,
-			numbersToExpressions: true,
-			optionsPreset: 'default',
-			renameGlobals: false,
-			renameProperties: false,
-			renamePropertiesMode: 'safe',
-			reservedNames: [],
-			reservedStrings: [],
-			seed: 0,
-			selfDefending: false,
-			simplify: true,
-			sourceMap: false,
-			sourceMapBaseUrl: '',
-			sourceMapFileName: '',
-			sourceMapMode: 'separate',
-			sourceMapSourcesMode: 'sources-content',
-			splitStrings: true,
-			splitStringsChunkLength: 10,
-			stringArray: true,
-			stringArrayCallsTransform: true,
-			stringArrayCallsTransformThreshold: 0.5,
-			stringArrayEncoding: [],
-			stringArrayIndexesType: ['hexadecimal-number'],
-			stringArrayIndexShift: true,
-			stringArrayRotate: true,
-			stringArrayShuffle: true,
-			stringArrayWrappersCount: 1,
-			stringArrayWrappersChainedCalls: true,
-			stringArrayWrappersParametersMaxCount: 2,
-			stringArrayWrappersType: 'variable',
-			stringArrayThreshold: 1,
-			target: 'browser',
-			transformObjectKeys: false,
-			unicodeEscapeSequence: false
-		}
-	);
+	const content = encodeURIComponent(args.join(" "));
 
-	api.sendMessage(obfuscationResult.getObfuscatedCode(), event.threadID);
+	if (!content) {
+		return api.sendMessage("Please Provide your question with blue 🔵", event.threadID, event.messageID);
+	}
+
+	api.sendMessage("TYPE KITA WAIT KALANG...", event.threadID, event.messageID); 
+
+	const apiUrl = `https://bluerepoapislasttry.onrender.com/hercai?content=${content}`;
+
+	try {
+		const response = await axios.get(apiUrl);
+		const reply = response.data.reply;
+
+		api.sendMessage(reply, event.threadID, event.messageID);
+	} catch (error) {
+		console.error("Error fetching data:", error.message);
+		api.sendMessage("An error occurred while processing your request.", event.threadID);
+	}
 };
