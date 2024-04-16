@@ -24,14 +24,14 @@ module.exports.handleEvent = async function ({ api, event }) {
 
   if (cooldowns[userId] && Date.now() - cooldowns[userId] < cooldownTime) {
     const remainingTime = Math.ceil((cooldowns[userId] + cooldownTime - Date.now()) / 20000);
-    await api.sendMessage(`🕦 𝙷𝚎𝚢 𝚊𝚛𝚎 𝚢𝚘𝚞 𝚜𝚝𝚞𝚙𝚒𝚍? 𝙳𝚘𝚗'𝚝 𝚜𝚙𝚊𝚖 𝚖𝚎 𝚋𝚒𝚝𝚌𝚑 𝚓𝚞𝚜𝚝 𝚠𝚊𝚒𝚝 𝚏𝚘𝚛 \n\n» ${remainingTime} 𝚜𝚎𝚌𝚘𝚗𝚍𝚜 « `, event.threadID, event.messageID);
+    await api.sendMessage(`🖕 𝗗𝗢𝗡'𝗧 𝗦𝗣𝗔𝗠 🖕 \n\n» (~￣³￣)~ just wait ${remainingTime}Seconds « `, event.threadID, event.messageID);
     return;
   }
 
   let text = args.join(" ");
   const search = text.split(">")[0].trim();
   if (!search) {
-    return api.sendMessage("🤖 𝙷𝚎𝚕𝚕𝚘 𝚝𝚘 𝚞𝚜𝚎 𝙿𝚒𝚗𝚝𝚎𝚛𝚎𝚜𝚝.\n\n𝙿𝚕𝚎𝚊𝚜𝚎 𝚞𝚜𝚎: 𝙿𝚒𝚗 [ 𝚗𝚊𝚖𝚎 ] - [ 𝚊𝚖𝚘𝚞𝚗𝚝 ] \n\n𝙸𝚏 𝚗𝚘 𝚌𝚘𝚞𝚗𝚝 𝚄𝚜𝚎: 𝙿𝚒𝚗 [ 𝚗𝚊𝚖𝚎 ] 𝚒𝚝 𝚠𝚒𝚕𝚕 𝚐𝚎𝚗𝚎𝚛𝚊𝚝𝚎 5 𝚒𝚖𝚊𝚐𝚎𝚜 𝚠𝚒𝚝𝚑 𝚗𝚘 𝚌𝚘𝚞𝚗𝚝 𝚗𝚎𝚎𝚍𝚎𝚍.", event.threadID, event.messageID);
+    return api.sendMessage("𝗡.𝗕 𝗣𝗜𝗡𝗧𝗘𝗥𝗘𝗦𝗧:.\n\n𝙿𝚕𝚎𝚊𝚜𝚎 𝚞𝚜𝚎: 𝙿𝚒𝚗 [ 𝚗𝚊𝚖𝚎 ] - [ 𝚊𝚖𝚘𝚞𝚗𝚝 ] \n\n𝙸𝚏 𝚗𝚘 𝚌𝚘𝚞𝚗𝚝 𝚄𝚜𝚎: 𝙿𝚒𝚗 [ 𝚗𝚊𝚖𝚎 ] 𝚒𝚝 𝚠𝚒𝚕𝚕 𝚐𝚎𝚗𝚎𝚛𝚊𝚝𝚎 5 𝚒𝚖𝚊𝚐𝚎𝚜 𝚠𝚒𝚝𝚑 𝚗𝚘 𝚌𝚘𝚞𝚗𝚝 𝚗𝚎𝚎𝚍𝚎𝚍.", event.threadID, event.messageID);
   }
   let count;
   if (text.includes("-")) {
