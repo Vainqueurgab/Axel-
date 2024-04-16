@@ -5,7 +5,7 @@ module.exports.config = {
 	credits: "John Lester",
 	description: "Comment on the board",
 	commandCategory: "Memes",
-    usePrefix:true,
+        hasPrefix:true,
 	usages: "[text]",
 	cooldowns: 5,
 	dependencies: {
