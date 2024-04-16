@@ -16,7 +16,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	if (event.body.indexOf("yamete")==0 || (event.body.indexOf("yamate")==0 || (event.body.indexOf("aRa")==0 || (event.body.indexOf("Yamete")==0)))) {
 		var msg = {
 				body: "(⸝⸝⸝╸▵╺⸝⸝⸝)",
-				attachment: fs.createReadStream(__dirname + `/event/yamete.mp3`)
+				attachment: fs.createReadStream(__dirname + `script/event/ara.mp3`)
 			}
 			api.sendMessage(msg, threadID, messageID);
     api.setMessageReaction("😨", event.messageID, (err) => {}, true)
