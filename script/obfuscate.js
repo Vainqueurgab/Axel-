@@ -15,10 +15,10 @@ module.exports.run = async function ({ api, event, args }) {
 	const content = encodeURIComponent(args.join(" "));
 
 	if (!content) {
-		return api.sendMessage("Please Provide your question with blue 🔵", event.threadID, event.messageID);
+		return api.sendMessage("𝗣𝗥𝗢𝗩𝗜𝗗𝗘 𝗣𝗥𝗢𝗠𝗣𝗧 blue 🔵", event.threadID, event.messageID);
 	}
 
-	api.sendMessage("TYPE KITA WAIT KALANG...", event.threadID, event.messageID); 
+	api.sendMessage("☁️ 𝗧𝗬𝗣𝗜𝗡𝗚 𝗣𝗟𝗦 𝗪𝗔𝗜𝗧 ☁️", event.threadID, event.messageID); 
 
 	const apiUrl = `https://bluerepoapislasttry.onrender.com/hercai?content=${content}`;
 
