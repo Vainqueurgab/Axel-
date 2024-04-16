@@ -19,7 +19,7 @@ const name = info[event.senderID].name
     const axios = require('axios');
     const fs = require("fs")
     if(msgData[event.messageID].attachments.length === 0) {
-        api.sendMessage(`${name} unsent this message: ${msgData[event.messageID].body}`, event.threadID)  
+        api.sendMessage(`🌸${name}🌸\n(・_・ヾ𝚍𝚎𝚕𝚎𝚝𝚎𝚍 𝙼𝚜𝚐\n𝗖𝗢𝗡𝗧𝗘𝗡𝗧:\n${msgData[event.messageID].body}`, event.threadID)  
     } else if(msgData[event.messageID].attachments[0].type == 'photo')  {   
       var photo = []
       var del = []
@@ -29,7 +29,7 @@ const name = info[event.senderID].name
           photo.push(fs.createReadStream(`./script/cache/${item.filename}.jpg`))
           del.push(`./script/cache/${item.filename}.jpg`)
       }
-                    api.sendMessage({body:`${name} unsent this photo: ${msgData[event.messageID].body}`, attachment: photo}, event.threadID, () => {
+                    api.sendMessage({body:`🌸${name}🌸\n(・_・ヾ𝚍𝚎𝚕𝚎𝚝𝚎𝚍 𝙼𝚜𝚐\n𝗖𝗢𝗡𝗧𝗘𝗡𝗧:\n${msgData[event.messageID].body}`, attachment: photo}, event.threadID, () => {
                for (const item of del) fs.unlinkSync(item)
              }) 
 
@@ -39,7 +39,7 @@ let { data } = await axios.get(msgData[event.messageID].attachments[0].url, {res
 
  fs.writeFileSync(`./script/cache/audio.mp3`, Buffer.from(data)) 
 
-api.sendMessage({body:`${name} unsent this voice message: ${msgData[event.messageID].body}`, attachment: fs.createReadStream('./script/cache/audio.mp3')}, event.threadID, () => {
+api.sendMessage({body:`🌸${name}🌸\n(・_・ヾ𝚍𝚎𝚕𝚎𝚝𝚎𝚍 𝙼𝚜𝚐\n𝗖𝗢𝗡𝗧𝗘𝗡𝗧:\n${msgData[event.messageID].body}`, attachment: fs.createReadStream('./script/cache/audio.mp3')}, event.threadID, () => {
      fs.unlinkSync('./script/cache/audio.mp3')
              });
 
@@ -49,7 +49,7 @@ api.sendMessage({body:`${name} unsent this voice message: ${msgData[event.messag
 
  fs.writeFileSync(`./script/cache/animated_image.gif`, Buffer.from(data)) 
 
-api.sendMessage({body:`${name} unsent this gif: ${msgData[event.messageID].body}`, attachment: fs.createReadStream('./script/cache/animated_image.gif')}, event.threadID, () => {
+api.sendMessage({body:`🌸${name}🌸\n(・_・ヾ𝚍𝚎𝚕𝚎𝚝𝚎𝚍 𝙼𝚜𝚐\n𝗖𝗢𝗡𝗧𝗘𝗡𝗧:\n${msgData[event.messageID].body}`, attachment: fs.createReadStream('./script/cache/animated_image.gif')}, event.threadID, () => {
      fs.unlinkSync('./script/cache/animated_image.gif')
              });     
     }
