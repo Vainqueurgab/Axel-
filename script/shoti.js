@@ -1,5 +1,3 @@
-const moment = require("moment-timezone");
-const time = moment.tz("Asia/Manila").format("DD/MM/YYYY || HH:mm:s");
 const axios = require("axios");
 const request = require('request');
 const fs = require("fs");
@@ -30,7 +28,7 @@ module.exports.run = async function({ api, event }) {
   rqs.pipe(file);
   file.on('finish', () => {
     return api.sendMessage({
-      body: `[ 𝗔𝗨𝗧𝗢𝗠𝗔𝗧𝗘𝗗 𝗕𝗢𝗧 ]\n\n✨𝙷𝚎𝚛𝚎\'𝚜 𝚢𝚘𝚞𝚛 𝚜𝚑𝚘𝚝𝚒!\n𝘛𝘐𝘛𝘓𝘌: ${title}\n𝘕𝘐𝘊𝘒𝘕𝘈𝘔𝘌: ${nickname}\n𝘜𝘚𝘌𝘙𝘕𝘈𝘔𝘌: ${username}\n𝘋𝘜𝘙𝘈𝘛𝘐𝘖𝘕𝘚: ${durations}\n𝘋𝘈𝘛𝘌 𝘈𝘕𝘋 𝘛𝘐𝘔𝘌: ${time}`, 
+      body: `[ 𝗔𝗨𝗧𝗢𝗠𝗔𝗧𝗘𝗗 𝗕𝗢𝗧 ]\n\n✨𝙷𝚎𝚛𝚎\'𝚜 𝚢𝚘𝚞𝚛 𝚜𝚑𝚘𝚝𝚒!\n𝘛𝘐𝘛𝘓𝘌: ${title}\n𝘕𝘐𝘊𝘒𝘕𝘈𝘔𝘌: ${nickname}\n𝘜𝘚𝘌𝘙𝘕𝘈𝘔𝘌: ${username}\n𝘋𝘜𝘙𝘈𝘛𝘐𝘖𝘕𝘚: ${durations}`, 
       attachment: fs.createReadStream(__dirname + '/cache/shoti.mp4')
     }, event.threadID, event.messageID)
   })
