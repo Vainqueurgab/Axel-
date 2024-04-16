@@ -6,7 +6,7 @@ module.exports.config = {
   credits: "Khoa",
   description: "It's a compound :>",
   commandCategory: "love",
-  usePrefix:true,
+  hasPrefix:true,
   usages: "",
   dependencies: {
         "axios": "",
