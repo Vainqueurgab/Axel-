@@ -9,7 +9,7 @@ module.exports.config = {
   version: '1.0.0',
   hasPermission: 0,
   credits: 'rickciel',
-  usePrefix: true,
+  hasPrefix: true,
   description: 'Download and send a Facebook video',
   commandCategory: 'Utility',
   usages: 'fbdownload [video URL]',
