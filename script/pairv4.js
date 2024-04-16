@@ -5,7 +5,7 @@ module.exports.config = {
 	credits: "tdunguwu",
 	description: "",
 	commandCategory: "love",
-    usePrefix:true,
+        hasPrefix:true,
 	cooldowns: 5,
 	dependencies: {
         "axios": "",
