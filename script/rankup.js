@@ -19,7 +19,7 @@ module.exports.config = {
   hasPermssion: 1,
   credits: "John Lester",
   description: "Announce rankup for each group, user",
-  usePrefix: true,
+  hasPrefix: true,
   commandCategory: "Edit-IMG",
   dependencies: {
     "fs-extra": ""
