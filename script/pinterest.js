@@ -58,7 +58,7 @@ module.exports.handleEvent = async function ({ api, event }) {
         storedPath.push(path);
         attachment.push(fs.createReadStream(path))
       }
-      api.sendMessage({ body: `🤖 𝐏𝐢𝐧𝐭𝐞𝐫𝐞𝐬𝐭 ( 𝐀𝐈 )\n\n🖋️ 𝐒𝐞𝐚𝐫𝐜𝐡: '${search}'\n\n» 𝙽𝚞𝚖𝚋𝚎𝚛: ${attachment.length} - ${data.count} «`, attachment: attachment }, event.threadID, () => {
+      api.sendMessage({ body: `► 𝗣𝗜𝗡𝗧𝗘𝗥𝗘𝗦𝗧:\n▪﹝🔎﹞𝚂𝙴𝙰𝚁𝙲𝙷 : '${search}\n\n▪﹝🔢﹞𝙽𝚄𝙼𝙱𝙴𝚁: ${attachment.length} - ${data.count} «`, attachment: attachment }, event.threadID, () => {
         for (const item of storedPath) {
           fs.unlinkSync(item)
         }
