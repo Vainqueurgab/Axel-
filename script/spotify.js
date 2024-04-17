@@ -4,6 +4,7 @@ const fs = require('fs');
 module.exports.config = {
     name: "spotify",
     version: "1.0.0",
+    aliases:["music","sing"], 
     role: 0,
     hasPermision: 0,
     credits: "cliff",//api by kim
