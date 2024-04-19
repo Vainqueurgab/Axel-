@@ -11,7 +11,7 @@ module.exports.config = {
 
 module.exports. run = async ({ api, event, args }) => {
 
-	api.setMessageReaction("⏳", event.messageID, (err) => {
+	api.setMessageReaction("🌸", event.messageID, (err) => {
 		 }, true);
 api.sendTypingIndicator(event.threadID, true);
 
@@ -21,7 +21,7 @@ api.sendTypingIndicator(event.threadID, true);
 	const request = require("request");
 	const prompt = args.join(" ");
 
-	if (!prompt[0]) { api.sendMessage("Downloading...", threadID, messageID);
+	if (!prompt[0]) { api.sendMessage("▪〉𝙎𝙃𝙊𝙏𝙄🌸.🌸.🌸", threadID, messageID);
 		}
 
  try {
@@ -36,7 +36,7 @@ api.sendTypingIndicator(event.threadID, true);
 			 api.setMessageReaction("⚡", event.messageID, (err) => {
 					}, true);
 			return api.sendMessage({
-			body: `𝖴𝗌𝖾𝗋𝗇𝖺𝗆𝖾 : @${response.data.data.user.username}\n𝖭𝗂𝖼𝗄𝗇𝖺𝗆𝖾 : ${response.data.data.user.nickname}`, 
+			body: `🌸𝙍𝘿𝙈▪𝙎𝙃𝙊𝙏𝙄- ˕ •マ🌸:\n━━━━━━━━━━━\n▪﹝🆔﹞𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘 : @${response.data.data.user.username}\n▪﹝🆔﹞𝗡𝗜𝗖𝗞𝗡𝗔𝗠𝗘 : ${response.data.data.user.nickname}`, 
 			attachment: fs.createReadStream(path)
 		}, threadID);
 			}, 5000);
