@@ -27,7 +27,7 @@ module.exports.run = async function({ api, event, args }) {
     api.setMessageReaction("🎼", event.messageID, (err) => {}, true);
 
     return api.sendMessage({
-      body: `▪[📑]𝗧𝗜𝗧𝗟𝗘: ${title}\n━━━━━━━━━━━\n▪[🆔]𝗔𝗥𝗧𝗜𝗦𝗧𝗘: ${artist}\n━━━━━━━━━━━\n▪〉﹝𝗟𝗬𝗥𝗜𝗖𝗦﹞:\n${lyrics}\n━━━━━━━━━━━\n🟢ᗩƐᔕƬHƐᖇ⚪- ˕ •マ,
+      body: `▪[📑]𝗧𝗜𝗧𝗟𝗘: ${title}\n━━━━━━━━━━━\n▪[🆔]𝗔𝗥𝗧𝗜𝗦𝗧𝗘: ${artist}\n━━━━━━━━━━━\n▪〉﹝𝗟𝗬𝗥𝗜𝗖𝗦﹞:\n${lyrics}\n━━━━━━━━━━━\n🟢ᗩƐᔕƬHƐᖇ⚪- ˕ •マ`,
       attachment: img
     }, event.threadID, () => fs.unlinkSync(ly), event.messageID);
   } catch (a) {
