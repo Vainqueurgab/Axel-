@@ -3,11 +3,12 @@ const path = require("path");
 const axios = require("axios");
 
 module.exports.config = {
-	name: "say",
+	name: "😆",
 	version: "1.0.0",
+	aliases:["say"],
 	role: 0,
-	credits: "cliff",
-	description: "Text to voice speech messages",
+	credits: "cliff",//mod Aesther
+	description: "Text to voice speech messages french",
 	hasPrefix: false,
 	usages: `Text to speech messages`,
 	cooldown: 0,
@@ -32,14 +33,14 @@ module.exports.run = async function({ api, event, args }) {
 };
 
 function detectLanguage(content) {
-	const supportedLanguages = ["ru", "en", "ko", "ja", "tl"];
+	const supportedLanguages = ["ru", "en", "ko", "ja", "tl","fr"];
 	for (const lang of supportedLanguages) {
 		if (content.startsWith(lang)) {
 			return lang;
 		}
 	}
 	// Default language if not specified or not supported
-	return "tl";
+	return "fr";
 }
 
 async function downloadFile(url, filePath) {
