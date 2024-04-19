@@ -19,7 +19,7 @@ module.exports.run = async function({ api, event, args }) {
     const r = await axios.get('https://lyrist.vercel.app/api/' + t);
     const { image, lyrics, artist, title } = r.data;
 
-    let ly = __dirname + "/../cache/lyrics.png";
+    let ly = __dirname + "/../public/image/lyrics.png";
     let suc = (await axios.get(image, { responseType: "arraybuffer" })).data;
     fs.writeFileSync(ly, Buffer.from(suc, "utf-8"));
     let img = fs.createReadStream(ly);
