@@ -3,7 +3,7 @@ const path = require("path");
 const axios = require("axios");
 
 module.exports.config = {
-	name: "😆",
+	name: "🥲",
 	version: "1.0.0",
 	aliases:["say"],
 	role: 0,

@@ -20,7 +20,7 @@ module.exports.run = async function({ api, event, args }) {
         } else if(args.join(" ").includes("|")) {
             return api.sendMessage("Please provide both a question and an answer.", threadID, messageID);
         } else {
-            return api.sendMessage("Please use '|' character to separate the question and answer.", threadID, messageID);
+            return api.sendMessage("рL㉹aՖ㉹🌱 use '|' ꒞♬ara꒞†㉹r🌲 to Ֆ㉹рara†㉹🍀 the question aո꒯🦖 aոՖա㉹r🍁.", threadID, messageID);
         }
     }
     const question = encodeURIComponent(input[0].trim());
@@ -35,6 +35,6 @@ module.exports.run = async function({ api, event, args }) {
             api.sendMessage(`Successfully taught. Question: ${input[0].trim()} | Answer: ${input[1].trim()}`, threadID, messageID);
         }
     } catch (error) {
-        api.sendMessage("An error occurred while fetching the data.", threadID, messageID);
+        api.sendMessage("Aո🌼 error occurred while fetching the data.", threadID, messageID);
     }
 };

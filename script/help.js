@@ -1,98 +1,97 @@
-module.exports.config = {
-  name: 'help',
-  version: '1.0.0',
-  role: 0,
-  hasPrefix: true,
-  aliases: ['info'],
-  description: "Beginner's guide",
-  usage: "Help [page] or [command]",
-  credits: 'Develeoper',
-};
-module.exports.run = async function({
-  api,
-  event,
-  enableCommands,
-  args,
-  Utils,
-  prefix
-}) {
-  const input = args.join(' ');
-  try {
-    const eventCommands = enableCommands[1].handleEvent;
-    const commands = enableCommands[0].commands;
-    if (!input) {
-      const pages = 20;
-      let page = 1;
-      let start = (page - 1) * pages;
-      let end = start + pages;
-      let helpMessage = `[🔵ᗩƐᔕƬHƐᖇ-ᗷOƬ🔵]\n  ˚₊‧꒰ა /ᐠ - ˕ -マ໒꒱ ‧₊˚ \n━━━━━━━━━━━\n`;
-      for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `✪ \t${i + 1}▪﹝${prefix}${commands[i]}﹞\n`;
-      }
-      helpMessage += '\n━ 𝗘𝗩𝗘𝗡𝗧.𝗟𝗜𝗦𝗧- ˕ -ྀマ[🏷️]\n━━━━━━━━━━━\n';
-      eventCommands.forEach((eventCommand, index) => {
-        helpMessage += `✦ \t${index + 1}▪﹝${prefix}${eventCommand}﹞\n`;
-      });
-      helpMessage += `\n\n▪[📚]𝗣𝗔𝗚𝗘 : [${page}/${Math.ceil(commands.length / pages)}] ฅ^.ᆺ.^ฅ\n━━━━━━━━━━━\n[🆔]𝗔𝗨𝗧𝗢𝗕𝗢𝗧 𝗖𝗥𝗘𝗔𝗧𝗘𝗗 𝗕𝗬 : 𝗔𝗡𝗝𝗔/𝗧𝗛𝗘𝗔🏅\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/thegodess.aesther\n[⚙️]𝗟𝗜𝗡𝗞 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 :https://aesther-anja-autobot.onrender.com/`;
-      api.sendMessage(helpMessage, event.threadID, event.messageID);
-    } else if (!isNaN(input)) {
-      const page = parseInt(input);
-      const pages = 20;
-      let start = (page - 1) * pages;
-      let end = start + pages;
-      let helpMessage = `▪〉𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝘀 - 𝗟𝗜𝗦𝗧(－－〆)[🔖]\n━━━━━━━━━━━\n`;
-      for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `✪ \t${i + 1}▪﹝${prefix}${commands[i]}﹞\n`;
-      }
-      helpMessage += '\n━ 𝗘𝗩𝗘𝗡𝗧.𝗟𝗜𝗦𝗧- ˕ -ྀマ[🏷️]\n━━━━━━━━━━━\n';
-      eventCommands.forEach((eventCommand, index) => {
-        helpMessage += `✦ \t${index + 1}▪﹝${prefix}${eventCommand}﹞\n`;
-      });
-      helpMessage += `\n▪[📚]𝗣𝗔𝗚𝗘 : [${page}/${Math.ceil(commands.length / pages)}] ฅ^.ᆺ.^ฅ\n━━━━━━━━━━━\n[🆔]𝗔𝗨𝗧𝗢𝗕𝗢𝗧 𝗖𝗥𝗘𝗔𝗧𝗘𝗗 𝗕𝗬 : 𝗔𝗡𝗝𝗔/𝗧𝗛𝗘𝗔🏅\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/thegodess.aesther\n[⚙️]𝗟𝗜𝗡𝗞 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 :https://aesther-anja-autobot.onrender.com/ `;
-      api.sendMessage(helpMessage, event.threadID, event.messageID);
-    } else {
-      const command = [...Utils.handleEvent, ...Utils.commands].find(([key]) => key.includes(input?.toLowerCase()))?.[1];
-      if (command) {
-        const {
-          name,
-          version,
-          role,
-          aliases = [],
-          description,
-          usage,
-          credits,
-          cooldown,
-          hasPrefix
-        } = command;
-        const roleMessage = role !== undefined ? (role === 0 ? '➛ Permission: user' : (role === 1 ? '➛ Permission: admin' : (role === 2 ? '➛ Permission: thread Admin' : (role === 3 ? '➛ Permission: super Admin' : '')))) : '';
-        const aliasesMessage = aliases.length ? `➛ Aliases: ${aliases.join(', ')}\n` : '';
-        const descriptionMessage = description ? `Description: ${description}\n` : '';
-        const usageMessage = usage ? `➛ Usage: ${usage}\n` : '';
-        const creditsMessage = credits ? `➛ Credits: ${credits}\n` : '';
-        const versionMessage = version ? `➛ Version: ${version}\n` : '';
-        const cooldownMessage = cooldown ? `➛ Cooldown: ${cooldown} second(s)\n` : '';
-        const message = ` 「 Command 」\n\n➛ Name: ${name}\n${versionMessage}${roleMessage}\n${aliasesMessage}${descriptionMessage}${usageMessage}${creditsMessage}${cooldownMessage}`;
-        api.sendMessage(message, event.threadID, event.messageID);
-      } else {
-        api.sendMessage('Command not found.', event.threadID, event.messageID);
-      }
+const fs = require("fs");
+const path = require("path");
+
+const commandsPerPage = 10;
+
+module.exports = {
+  config: {
+    name: "help",
+    description: "Shows a list of available commands.",
+    usage: ":help [command/page]",
+    author: "MeganAe and Lia", // + liaaa
+  },
+  run: ({ api, event }) => {
+    const { body } = event;
+    const [cmd, ...args] = body.split(" ");
+
+    const commandFiles = fs
+      .readdirSync(__dirname)
+      .filter((file) => file.endsWith(".js") && file !== "help.js");
+
+    const sendMessage = (message) =>
+      api.sendMessage(message, event.threadID, event.messageID);
+
+    switch (true) {
+      case args.length === 0:
+        let helpMessage = `🗯 | 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀\n\n╔═════▓࿇࿇▓═════╗n\🌱.𝗠𝗲𝘁𝗼𝘂𝘀𝗵𝗲𝗹𝗮.☘️\n╚═════▓࿇࿇▓═════╝ (Page 1/${Math.ceil(
+          commandFiles.length / commandsPerPage,
+        )}):\n`;
+
+        commandFiles.slice(0, commandsPerPage).forEach((file) => {
+          const commandName = path.basename(file, ".js");
+          const command = require(`./${commandName}`);
+          const { name, description } = command.config;
+          helpMessage += `╭─❍[🎯].☘️${name || " No Name"} 🌱- ${
+            description || "No description"
+          }\n╰───────────⟡\n`;
+        }═════▓࿇࿇▓═════);
+
+        sendMessage(helpMessage);
+        break;
+
+      case !isNaN(args[0]):
+        const pageNumber = parseInt(args[0], 10);
+        if (pageNumber <= 0) {
+          sendMessage("𝕀𝕟𝕧𝕒𝕝𝕚𝕕🌐 𝕡𝕒𝕘𝕖🍵 𝕟𝕦𝕞𝕓𝕖𝕣🏅.");
+          return;
+        }
+
+        const startIndex = (pageNumber - 1) * commandsPerPage;
+        const endIndex = pageNumber * commandsPerPage;
+
+        if (startIndex >= commandFiles.length) {
+          sendMessage(`ℕ𝕠🎯 𝕔𝕠𝕞𝕞𝕒𝕟𝕕𝕤🍰 on 𝕡𝕒𝕘𝕖☘️ ${pageNumber}.`);
+          return;
+        }
+
+        let pageMessage = `🌐 | 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀\n\n╔═════▓࿇࿇▓═════╗n\🌱.𝗠𝗲𝘁𝗼𝘂𝘀𝗵𝗲𝗹𝗮.☘️\n╚═════▓࿇࿇▓═════╝ (Page ${pageNumber}/${Math.ceil(
+          commandFiles.length / commandsPerPage,
+        )}):\n`;
+
+        commandFiles.slice(startIndex, endIndex).forEach((file) => {
+          const commandName = path.basename(file, ".js");
+          const command = require(`./${commandName}`);
+          const { name, description } = command.config;
+          pageMessage += `╭─❍[🎯].☘️${name || " No Name"} 🌱- ${
+            description || "No description"
+          }\n╰───────────⟡\n`;
+        }═════▓࿇࿇▓═════);
+
+        sendMessage(pageMessage);
+        break;
+
+      default:
+        const commandName = args.join(" ").toLowerCase();
+        const commandFile = commandFiles.find(
+          (file) => path.basename(file, ".js").toLowerCase() === commandName,
+        );
+
+        if (commandFile) {
+          const command = require(`./${path.basename(commandFile, ".js")}`);
+          const { name, description, usage, author, version } = command.config;
+          sendMessage(
+            `➤【 ${name || "Guide:"} 】
+📝 Created by: ${author || "Anonymous"}
+💻 Version: ${version || "1.0"}
+🔎 Description:
+${description || "Its a mystery"}
+💡 Usage: 
+${usage || "Guess it"}`,
+          );
+        } else {
+          sendMessage(`◖⬤█▚▞▌█▚▞▌▅▀▅█▚▌◗🍏 or ▐◣▅▀▅▐▅▚▐◖🍏 █▚▌⬤▀█▀🕸 █▀⬤▐▄██▚▌◗🏅: ${args.join(" ")}`);
+        }
+        break;
     }
-  } catch (error) {
-    console.log(error);
-  }
+  },
 };
-module.exports.handleEvent = async function({
-  api,
-  event,
-  prefix
-}) {
-  const {
-    threadID,
-    messageID,
-    body
-  } = event;
-  const message = prefix ? '☁️𝗣𝗥𝗘𝗙𝗜𝗫^- ⩊ -マ₎𐒡☁️\n━━━━━━━━━\n➤𝙲𝙼𝙳𝚂: ' + prefix : "𝙎𝙊𝙍𝙍𝙔........(ᵕ—ᴗ—) ♡\n━━━━━━━━━━━\nI don't have 𝚊 𝗣𝗥𝗘𝗙𝗜𝗫";
-  if (body?.toLowerCase().startsWith('prefix')) {
-    api.sendMessage(message, threadID, messageID);
-  }
-}
