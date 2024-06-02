@@ -1,4 +1,4 @@
-width: ;body {
+body {
 		margin: auto;
 		padding: 20px;
 		font-family: -apple-system, 'Poppins', BlinkMacSystemFont, sans-serif;
@@ -208,7 +208,7 @@ div {
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/img/4.jpg'); 
+    background-image: url('https://i.ibb.co/L1FKvL3/image.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
