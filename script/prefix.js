@@ -27,13 +27,13 @@ module.exports.run = function ({ api, event, prefix, admin }) {
 		api.sendMessage(
 				{
 						body: `𝗵𝗲𝗹𝗹𝗼, 𝗺𝘆 𝗽𝗿𝗲𝗳𝗶𝘅 𝗶𝘀 [ ${prefix} ]\n━━━━━━━━━━━━━━━━━━━━━━━\n𝗦𝗢𝗠𝗘 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 𝗧𝗛𝗔𝗧 𝗠𝗔𝗬 𝗛𝗘𝗟𝗣 𝗬𝗢𝗨:\n📜 ${prefix}help [number of page] -> see commands\n🤖💬 ${prefix}sim [message] -> talk to bot\n📞 ${prefix}callad [message] -> report any problem encountered\n📜 ${prefix}help [command] -> information and usage of command\n\nHave fun using it, enjoy!😊\n𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥: https://www.facebook.com/${admin}\n━━━━━━━━━━━━━━━━━━━━━━━`,
-						attachment: fs.createReadStream(__dirname + "/cache2/prefix.jpeg")
+						attachment: fs.createReadStream(__dirname + "https://i.ibb.co/mHXpgqJ/image.jpg")
 				},
 				threadID,
 				(err, messageInfo) => {
 						if (err) return console.error(err);
 
-						const voiceFile = fs.readFileSync(__dirname + "/cache2/prefix.jpeg");
+						const voiceFile = fs.readFileSync(__dirname + "");
 						api.sendMessage(
 								{
 										attachment: voiceFile,
