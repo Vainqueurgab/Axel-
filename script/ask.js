@@ -22,7 +22,7 @@ module.exports.run = async function ({ api, event, args }) {
   try {
     const prompt = args.join(" ");
     if (!prompt) {
-      await api.sendMessage("☠️Ѫﭐո꒯㉹Ֆ† ♬꒻:\n━━━━━━━━━━━\n\n 🄿🄾🅂🅴🆁 🆅🄾🅃🆁🅴 🅀🆄🅴🅂🅃🅸🄾🄽.", event.threadID);
+      await api.sendMessage("༒𝙰ｎ𝚘ｔｈ𝚎ｒ.🌱:\n━━━━━━━━━━━\n\n ㋛.𝖯𝗈𝗌𝖾𝗋 𝗆𝗈𝗂 𝗏𝗈𝗍𝗋𝖾 𝗊𝗎𝖾𝗌𝗍𝗂𝗈𝗇.💭", event.threadID);
       return;
     }
     const response = await axios.get(`https://sandipbaruwal.onrender.com/gpt?prompt=${encodeURIComponent(prompt)}`);
@@ -37,7 +37,7 @@ module.exports.run = async function ({ api, event, args }) {
       }
     }
 
-    await api.sendMessage(`☠️Ѫﭐո꒯㉹Ֆ† ♬꒻マ:\n━━━━━━━━━━━\n${formattedAnswer}\n━━━━━━━━━━━\n🍬𝗠𝗲𝘁𝗼𝘂𝘀𝗵𝗲𝗹𝗮 𝘄𝗮𝗹𝗸𝗲𝗿🍷`, event.threadID);
+    await api.sendMessage(`🎯𝙰ｎ𝚘ｔｈ𝚎ｒ.🍵:\n━━━━━━━━━━━\n${formattedAnswer}\n━━━━━━━━━━━\n💭𝗠𝗲𝘁𝗼𝘂𝘀𝗵𝗲𝗹𝗮 𝘄𝗮𝗹𝗸𝗲𝗿🎲`, event.threadID);
   } catch (error) {
     console.error("Error:", error.message);
   }
