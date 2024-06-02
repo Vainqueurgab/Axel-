@@ -17,16 +17,16 @@ module.exports.run = async function({
 }) {
   const input = args.join(' ');
   if (!input) {
-    api.sendMessage(`🟢ᗩƐᔕƬHƐᖇ⚪- ˕ •マ:\n━━━━━━━━━━━\n /)___/)    ♡\n꒰ ˶• ༝ - ˶꒱ \n./づ~🍱`, event.threadID, event.messageID);
+    api.sendMessage(`🟢 ᗩƐᔕƬHƐᖇ ⚪:\n━━━━━━━━━━━\n /)___/)    ♡\n꒰ ˶• ༝ - ˶꒱ \n./づ~🍱`, event.threadID, event.messageID);
     return;
   }
-  api.sendMessage(`🔍 "${input}"`, event.threadID, event.messageID);
+  api.sendMessage(``, event.threadID, event.messageID);
   try {
     const {
       data
     } = await axios.get(`https://soyeon-api.onrender.com/api?prompt=${encodeURIComponent(input)}`);
     const response = data.response;
-    api.sendMessage('🟢ᗩƐᔕƬHƐᖇ⚪- ˕ •マ:\n━━━━━━━━━━━\n' + response + '🟡', event.threadID, event.messageID);
+    api.sendMessage('🟢 ᗩƐᔕƬHƐᖇ ⚪:\n━━━━━━━━━━━\n' + response + ' 🟡', event.threadID, event.messageID);
   } catch (error) {
     api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
   }
