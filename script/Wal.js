@@ -1,12 +1,12 @@
 const axios = require('axios');
 
 module.exports.config = {
-  name: "anja",
+  name: "wal",
   version: "1.0.0",
   cooldown: 5,
   role: 0,
   hasPrefix: false,
-  aliases: ['anjara', 'cyberdetective'],
+  aliases: ['walker', 'cyberdetective'],
   description: "this command may help you",
   usage: "{pref}[name of cmd] [query]",
   credits: "Sleuth x Liane"
