@@ -34,7 +34,7 @@ module.exports = {
           helpMessage += `╭─❍[🎯].☘️${name || " No Name"} 🌱- ${
             description || "No description"
           }\n╰───────────⟡\n`;
-        }═════▓࿇࿇▓═════);
+        });
 
         sendMessage(helpMessage);
         break;
@@ -65,7 +65,7 @@ module.exports = {
           pageMessage += `╭─❍[🎯].☘️${name || " No Name"} 🌱- ${
             description || "No description"
           }\n╰───────────⟡\n`;
-        }═════▓࿇࿇▓═════);
+        });
 
         sendMessage(pageMessage);
         break;
