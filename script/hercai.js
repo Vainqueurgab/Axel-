@@ -19,7 +19,7 @@ module.exports.run = async function({
 }) {
   const input = args.join(' ');
   if (!input) {
-    api.sendMessage(`Please provide a question or statement after 'hercai'. For example: 'hercai What is the capital of France?'`, event.threadID, event.messageID);
+    api.sendMessage(`👻Please рr♡vﭐ꒯㉹🔥 a զﮠ㉹Ֆ†ﭐ♡ո❄ ♡r🌀 Ֆ†a†㉹Ѫ㉹ո†🪐 af†㉹r🌊 'hercai'. For example: 'hercai What is the capital of France?🛕'`, event.threadID, event.messageID);
     return;
   }
   api.sendMessage(`🔍 "${input}"`, event.threadID, event.messageID);
@@ -30,6 +30,6 @@ module.exports.run = async function({
     });
     api.sendMessage(response.reply, event.threadID, event.messageID);
   } catch (error) {
-    api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
+    api.sendMessage('Ѫﭐո꒯㉹Ֆ†-🅴🆁🆁🄾🆁\n..🌀 🌩 🌲..\nAn error occurred while processing your request\n\n contact MɆŦØU$ҤɆŁλ ₩λŁƙɆɌ My developper.', event.threadID, event.messageID);
   }
 };

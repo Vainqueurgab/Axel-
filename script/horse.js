@@ -23,7 +23,7 @@ module.exports.run = async ({
   } = event;
   const choices = ["black", "red", "yellow", "green", "pink"];
   if (!args[0] || !choices.includes(args[0])) {
-    api.sendMessage('Invalid choice. Please select one of the following colors: "black", "red", "yellow", "green", "pink". Please try again.', threadID, messageID);
+    api.sendMessage('🍁Invalid choice. Please select one of the following ꒞♡L♡rՖ🍀: "black", "red", "yellow", "green", "pink". Please try again.', threadID, messageID);
     return;
   }
   if (!args[1] || isNaN(args[1]) || parseInt(args[1]) <= 0) {
@@ -47,7 +47,7 @@ module.exports.run = async ({
     image = response.data;
   } catch (error) {
     console.error("Error fetching horse race image:", error);
-    return api.sendMessage("Apologies, there was an error processing the race. Please try again later.", threadID, messageID);
+    return api.sendMessage("🌿 Apologies, there was an error processing the race. Please try again later.", threadID, messageID);
   }
   const messageToSend = {
     body: 'Please wait for the result...',
