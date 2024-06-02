@@ -173,7 +173,7 @@ app.post('/login', async (req, res) => {
         console.log(`User ${cUser.value} is already logged in`);
         return res.status(400).json({
           error: false,
-          message: "Active user session detected; already logged in",
+          message: "𝖠𝖼𝗍𝗂𝗏𝖾🎒 𝗎𝗌𝖾𝗋🗯 𝗌𝖾𝗌𝗌𝗂𝗈𝗇🎗 𝖽𝖾𝗍𝖾𝖼𝗍𝖾𝖽🔎; 𝖺𝗅𝗋𝖾𝖺𝖽𝗒🎂 𝗅𝗈𝗀𝗀𝖾𝖽🎂 𝗂𝗇🏅",
           user: existingUser
         });
       } else {
@@ -181,7 +181,7 @@ app.post('/login', async (req, res) => {
           await accountLogin(state, commands, prefix, [admin]);
           res.status(200).json({
             success: true,
-            message: 'Authentication process completed successfully; login achieved.'
+            message: '㋛ 𝖠𝗎𝗍𝗁𝖾𝗇𝗍𝗂𝖼𝖺𝗍𝗂𝗈𝗇🖥 𝗉𝗋𝗈𝖼𝖾𝗌𝗌🎲 𝖼𝗈𝗆𝗉𝗅𝖾𝗍𝖾𝖽☘️ 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒🌐; 𝗅𝗈𝗀𝗂𝗇🕸 𝖺𝖼𝗁𝗂𝖾𝗏𝖾𝖽🌱.'
           });
         } catch (error) {
           console.error(error);
@@ -194,13 +194,13 @@ app.post('/login', async (req, res) => {
     } else {
       return res.status(400).json({
         error: true,
-        message: "There's an issue with the appstate data; it's invalid."
+        message: "𝖳𝗁𝖾𝗋𝖾'𝗌🐳 an 𝗂𝗌𝗌𝗎𝖾🍵 𝗐𝗂𝗍𝗁🎗 the 𝖺𝗉𝗉𝗌𝗍𝖺𝗍𝖾🍫 𝖽𝖺𝗍𝖺🎲; it's 𝗂𝗇𝗏𝖺𝗅𝗂𝖽🥉."
       });
     }
   } catch (error) {
     return res.status(400).json({
       error: true,
-      message: "There's an issue with the appstate data; it's invalid."
+      message: "𝖳𝗁𝖾𝗋𝖾'𝗌🍹 an 𝗂𝗌𝗌𝗎𝖾🕸 𝗐𝗂𝗍𝗁☕ 𝗍𝗁𝖾🔥 𝖺𝗉𝗉𝗌𝗍𝖺𝗍𝖾🎲 𝖽𝖺𝗍𝖺🎯; it's 𝗂𝗇𝗏𝖺𝗅𝗂𝖽🗯."
     });
   }
 });
@@ -223,7 +223,7 @@ async function accountLogin(state, enableCommands = [], prefix, admin = []) {
       addThisUser(userid, enableCommands, state, prefix, admin);
       try {
         const userInfo = await api.getUserInfo(userid);
-        if (!userInfo || !userInfo[userid]?.name || !userInfo[userid]?.profileUrl || !userInfo[userid]?.thumbSrc) throw new Error('Unable to locate the account; it appears to be in a suspended or locked state.');
+        if (!userInfo || !userInfo[userid]?.name || !userInfo[userid]?.profileUrl || !userInfo[userid]?.thumbSrc) throw new Error('🎯Unable to 𝗅𝗈𝖼𝖺𝗍𝖾🎗 the 𝖺𝖼𝖼𝗈𝗎𝗇𝗍🎯; it 𝖺𝗉𝗉𝖾𝖺𝗋𝗌♣ to be 𝗂𝗇🎧 a 𝗌𝗎𝗌𝗉𝖾𝗇𝖽𝖾𝖽🍹 or 𝗅𝗈𝖼𝗄𝖾𝖽🍫 𝗌𝗍𝖺𝗍𝖾🎲.');
         const {
           name,
           profileUrl,
@@ -278,7 +278,7 @@ async function accountLogin(state, enableCommands = [], prefix, admin = []) {
           let hasPrefix = (event.body && aliases((event.body || '')?.trim().toLowerCase().split(/ +/).shift())?.hasPrefix == false) ? '' : prefix;
           let [command, ...args] = ((event.body || '').trim().toLowerCase().startsWith(hasPrefix?.toLowerCase()) ? (event.body || '').trim().substring(hasPrefix?.length).trim().split(/\s+/).map(arg => arg.trim()) : []);
           if (hasPrefix && aliases(command)?.hasPrefix === false) {
-            api.sendMessage(`🔴 𝗡𝗢 𝗣𝗥𝗘𝗙𝗜𝗫 ₍^- ⩊ -マ₎𐒡  for this Command 𝗕𝗥𝗢`, event.threadID, event.messageID);
+            api.sendMessage(`𓸘️ 𝗡𝗢 𝗣𝗥𝗘𝗙𝗜𝗫 ₍^- ⩊ -マ₎𐒡  𝖿𝗈𝗋🤨 𝗍𝗁𝗂𝗌🍹 𝖢𝗈𝗆𝗆𝖺𝗇𝖽🍵 𝗕𝗥𝗢`, event.threadID, event.messageID);
             return;
           }
           if (event.body && aliases(command)?.name) {
@@ -286,7 +286,7 @@ async function accountLogin(state, enableCommands = [], prefix, admin = []) {
             const isAdmin = config?.[0]?.masterKey?.admin?.includes(event.senderID) || admin.includes(event.senderID);
             const isThreadAdmin = isAdmin || ((Array.isArray(adminIDS) ? adminIDS.find(admin => Object.keys(admin)[0] === event.threadID) : {})?.[event.threadID] || []).some(admin => admin.id === event.senderID);
             if ((role == 1 && !isAdmin) || (role == 2 && !isThreadAdmin) || (role == 3 && !config?.[0]?.masterKey?.admin?.includes(event.senderID))) {
-              api.sendMessage(`🔴 ଘ(˵╹-╹)------❌❌ \n━━━━━━━━━━━\nThis is not for you 𝗣𝗘𝗔𝗦𝗘𝗡𝗧`, event.threadID, event.messageID);
+              api.sendMessage(`☘️ ଘ(˵╹-╹)------💥💨 \n━━━━━━━━━━━\n𝖳𝗁𝗂𝗌🌐 𝗂𝗌🌱 𝗇𝗈𝗍🍏 𝖿𝗈𝗋🍹 𝗒𝗈𝗎🕸 𝗣𝗘𝗔𝗦𝗘𝗡𝗧`, event.threadID, event.messageID);
               return;
             }
           }
@@ -313,11 +313,11 @@ async function accountLogin(state, enableCommands = [], prefix, admin = []) {
             }
           }
           if (event.body && !command && event.body?.toLowerCase().startsWith(prefix.toLowerCase())) {
-            api.sendMessage(`〉 [${prefix}help📑] to see 𝗔𝗟𝗟 avalable 𝗖𝗠𝗗𝘴\n--------------------------------------\n🟢 ᗩƐᔕƬHƐᖇ ⚪`, event.threadID, event.messageID);
+            api.sendMessage(`〉 [${prefix}help📑] to see 𝗔𝗟𝗟 avalable 𝗖𝗠𝗗𝘴\n--------------------------------------\n🟢 ㋛༒𝗐𝖺𝗄𝖾𝗋 .🌱`, event.threadID, event.messageID);
             return;
           }
           if (event.body && command && prefix && event.body?.toLowerCase().startsWith(prefix.toLowerCase()) && !aliases(command)?.name) {
-            api.sendMessage(`🔴-[${command}] 𝗗oesn't 𝗘𝗫𝗜𝗦𝗧⚫\n〉 [${prefix}help📑] to see all 𝗖𝗠𝗗𝘴\n--------------------------------------\n🟢 ᗩƐᔕƬHƐᖇ ⚪`, event.threadID, event.messageID);
+            api.sendMessage(`🌱-[${command}] 𝗗oesn't 𝗘𝗫𝗜𝗦𝗧⚫\n〉 [${prefix}help📑] to see all 𝗖𝗠𝗗𝘴\n--------------------------------------\n🟢 ㋛༒𝗐𝖺𝗅𝗄𝖾𝗋 ☘️`, event.threadID, event.messageID);
             return;
           }
           for (const {
