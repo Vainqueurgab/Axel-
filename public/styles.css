@@ -1,4 +1,4 @@
-body {
+width: ;body {
 		margin: auto;
 		padding: 20px;
 		font-family: -apple-system, 'Poppins', BlinkMacSystemFont, sans-serif;
@@ -71,13 +71,12 @@ body {
 
 .container {
 	   color: #FFFF;
-	   background: #000000;
-		 border-radius: 10px;
+	   background: transparent;
+	   backdrop-filter: blur(10px);
+		 border-radius: 20px;
 		 padding: 20px;
-	   box-shadow: 0 0 .2rem #fff,0 0 .2rem #fff, 0 0 2rem #00FF00,
-            0 0 0.8rem #00FF00,
-            0 0 2.8rem #00FF00,
-            inset 0 0 1.3rem #00FF00;
+	   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+     place-items: center;
 		 margin-top: 20px;
 		 margin-bottom: 20px;
 	 outline: 2px solid #FFFFFF;
@@ -209,7 +208,7 @@ div {
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://i.postimg.cc/ZRCXpLkx/b74107677efecb9a7fbed140e84a5285.jpg'); 
+    background-image: url('/img/4.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
