@@ -25,7 +25,7 @@ module.exports.run = async function ({ api, event, args }) {
       await api.sendMessage("༒𝙰ｎ𝚘ｔｈ𝚎ｒ.🌱:\n━━━━━━━━━━━\n\n ㋛.𝖯𝗈𝗌𝖾𝗋 𝗆𝗈𝗂 𝗏𝗈𝗍𝗋𝖾 𝗊𝗎𝖾𝗌𝗍𝗂𝗈𝗇.💭", event.threadID);
       return;
     }
-    const response = await axios.get(`https://sandipbaruwal.onrender.com/gpt?prompt=${encodeURIComponent(prompt)}`);
+    const response = await axios.get(`https://soyeon-api.onrender.com/gpt?prompt=${encodeURIComponent(prompt)}`);
     const answer = response.data.answer;
 
     let formattedAnswer = "";
