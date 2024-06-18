@@ -25,7 +25,7 @@ module.exports.run = async function({
       let page = 1;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = ` ⚽𝗙𝗖 24 𝗔𝗨𝗧𝗢.𝗖𝗠𝗗🏆\n━━━━━━━━━━━━━━━\n\n`;
+      let helpMessage = `  ANOTHER.𝗖𝗠𝗗🏆\n━━━━━━━━━━━━━━━\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
         helpMessage += `\t${i + 1}. ⋆🏆⋆⁺₊✧☘️ ${prefix}${commands[i]} ✩ ⚽ ₊🌱\n`;
       }
@@ -40,7 +40,7 @@ module.exports.run = async function({
       const pages = 20;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `⚽𝗙𝗖 24 𝗔𝗨𝗧𝗢.𝗖𝗠𝗗🏆\n━━━━━━━━━━━━━━━\n\n`;
+      let helpMessage = ` ANOTHER.𝗖𝗠𝗗🏆\n━━━━━━━━━━━━━━━\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
         helpMessage += `\t${i + 1}. ⋆🏆⋆⁺₊✧☘️ ${prefix}${commands[i]} ➪✩ ⚽ ₊\n`;
       }
