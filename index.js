@@ -16,7 +16,7 @@ function start() {
         if (exitCode === 0) {
             console.log("𝖬𝖺𝗂𝗇🎲 𝗉𝗋𝗈𝖼𝖾𝗌𝗌🎯 𝖾𝗑𝗂𝗍𝖾𝖽🎲 𝗐𝗂𝗍𝗁♣ 𝖼𝗈𝖽𝖾🎧 0");
         } else if (exitCode === 1) {
-            console.log("𝖬𝖺𝗂𝗇🤬 𝗉𝗋𝗈𝖼𝖾𝗌𝗌🗯 𝖾𝗑𝗂𝗍𝖾𝖽♣ 𝗐𝗂𝗍𝗁🍵 𝖼𝗈𝖽𝖾🍫 1. 𝖱𝖾𝗌𝗍𝖺𝗋𝗍𝗂𝗇𝗀🍹...");
+            console.log("𝖬𝖺𝗂𝗇🤬 𝗉𝗋o𝖼𝖾𝗌𝗌🗯 𝖾𝗑𝗂𝗍𝖾𝖽♣ 𝗐𝗂𝗍𝗁🍵 𝖼𝗈𝖽𝖾🍫 1. 𝖱𝖾𝗌𝗍𝖺𝗋𝗍𝗂𝗇𝗀🍹...");
             start();
         }  else {
             console.error(`𝖬𝖺𝗂𝗇🎖 𝗉𝗋𝗈𝖼𝖾𝗌𝗌🥉 𝖾𝗑𝗂𝗍𝖾𝖽🎂 𝗐𝗂𝗍𝗁🍫 𝖼𝗈𝖽𝖾🎒 ${exitCode}`);
