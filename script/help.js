@@ -25,11 +25,11 @@ module.exports.run = async function({
       let page = 1;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `  ANOTHER.𝗖𝗠𝗗🏆\n━━━━━━━━━━━━━━━\n\n`;
+      let helpMessage = `  ㋛.𝙰ｖ𝚊ｌ𝚊ｂｌ𝚎  𝚌𝚖ｄ:\n━━━━━━━━━━━━━━━\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `\t${i + 1}. ⋆🏆⋆⁺₊✧☘️ ${prefix}${commands[i]} ✩ ⚽ ₊🌱\n`;
+        helpMessage += `\t${i + 1}. ⋆⋆⁺₊✧🎀 ${prefix}${commands[i]} ✩ ₊🌱\n`;
       }
-      helpMessage += '➪🄶🄰🄼🄴🄿🄻🄰🅈🅂 ⌨:\n\n';
+      helpMessage += '\n';
       eventCommands.forEach((eventCommand, index) => {
         helpMessage += `\t${index + 1}. ♣✩ ⚽ ₊ ${prefix}${eventCommand} ⋆🎯⋆⁺₊🌱\n`;
       });
@@ -40,15 +40,15 @@ module.exports.run = async function({
       const pages = 20;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = ` ANOTHER.𝗖𝗠𝗗🏆\n━━━━━━━━━━━━━━━\n\n`;
+      let helpMessage = `𝚊ｖ𝚊ｌ𝚊ｂｌ𝚎 𝚌𝚖ｄ🥢\n━━━━━━━━━━━━━━━\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `\t${i + 1}. ⋆🏆⋆⁺₊✧☘️ ${prefix}${commands[i]} ➪✩ ⚽ ₊\n`;
+        helpMessage += `\t${i + 1}. ⋆⋆⁺₊✧🎀 ${prefix}${commands[i]} ➪✩🏏 ₊\n`;
       }
-      helpMessage += '˖➪🄶🄰🄼🄴🄿🄻🄰🅈🅂 ⌨ ࣪ \n\n';
+      helpMessage += '\n';
       eventCommands.forEach((eventCommand, index) => {
         helpMessage += `\t${index + 1}.✩⚽ ₊𒊹${prefix}${eventCommand} ⋆🏆⋆⁺₊✧☘\n`;
       });
-      helpMessage += `\n𝗣𝗮𝗴𝗲 ${page} 𝗢𝗳 ${Math.ceil(commands.length / pages)}\n𝗕𝘁𝘄 𝗖𝗿𝗲𝗮𝘁𝗼𝗿 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗯𝗼𝘁➪➪ ♧ \n➪ https://www.apkfiles.com/apk-615154/fc-24-auto`;
+      helpMessage += `\n𝗣𝗮𝗴𝗲 ${page} 𝗢𝗳 ${Math.ceil(commands.length / pages)}\n𝗕𝘁𝘄 𝗖𝗿𝗲𝗮𝘁𝗼𝗿 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗯𝗼𝘁➪➪ ♧ \n➪ https://another-gpt.onrender.com`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else {
       const command = [...Utils.handleEvent, ...Utils.commands].find(([key]) => key.includes(input?.toLowerCase()))?.[1];
@@ -91,7 +91,7 @@ module.exports.handleEvent = async function({
     messageID,
     body
   } = event;
-  const message = prefix ? '⚽𝗙𝗖 24 𝗔𝗨𝗧𝗢.𝗖𝗠𝗗🏆\n━━━━━━━━━━━━━━━\n\n ☘️𝖲𝗒𝗌𝗍𝖾𝗆𝗌 𝗉𝗋𝖾𝖿𝗂𝗑 𝗂𝗌:🌱\nY𝗈𝗎𝗋 𝖼𝗁𝖺𝗍𝖻𝗈𝗍 𝗉𝗋𝖾𝖿𝗂𝗑 𝗂𝗌: ' + prefix : "⚽𝗙𝗖 24 𝗔𝗨𝗧𝗢.𝗖𝗠𝗗🏆\n━━━━━━━━━━━━━━━\nSorry i don't have prefix";
+  const message = prefix ? '🎀𝖲𝗒𝗌𝗍𝖾𝗆𝗌 𝗉𝗋𝖾𝖿𝗂𝗑 𝗂𝗌:🎲\nY🎀𝗈𝗎𝗋 𝖼𝗁𝖺𝗍𝖻𝗈𝗍 𝗉𝗋𝖾𝖿𝗂𝗑 𝗂𝗌: ' + prefix : "🎀Ａｎｏｔｈｅｒ.\n━━━━━━━━━━━━━━━\nSorry i don't have prefix";
   if (body?.toLowerCase().startsWith('prefix')) {
     api.sendMessage(message, threadID, messageID);
   }
