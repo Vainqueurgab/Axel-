@@ -215,3 +215,15 @@ body {
     color: #333;
     padding: 20px;
   }
+button {
+	background-color: transparent;
+	color: #fff;
+        border: 1px solid #000;
+	paddind: 10px 15px;
+	margin: 8px;
+	transition: 0.5s ease-out;
+}
+button:hover{
+	background-color: #EAE2D2;
+	color: #000;
+}
