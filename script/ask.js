@@ -17,16 +17,16 @@ module.exports.run = async function({
 }) {
   const input = args.join(' ');
   if (!input) {
-    api.sendMessage(`༒𝙰ｎ𝚘ｔｈ𝚎ｒ.🌱:\n━━━━━━━━━━━\n\n ㋛.𝖯𝗈𝗌𝖾𝗋 𝗆𝗈𝗂 𝗏𝗈𝗍𝗋𝖾 𝗊𝗎𝖾𝗌𝗍𝗂𝗈𝗇.💭`, event.threadID, event.messageID);
+    api.sendMessage(`🕙𝙰ｎ𝚘ｔｈ𝚎ｒ.🌱:\n━━━━━━━━━━━\n\n ㋛.𝖯𝗈𝗌𝖾𝗋 𝗆𝗈𝗂 𝗏𝗈𝗍𝗋𝖾 𝗊𝗎𝖾𝗌𝗍𝗂𝗈𝗇.💭`, event.threadID, event.messageID);
     return;
   }
   api.sendMessage(``, event.threadID, event.messageID);
   try {
     const {
       data
-    } = await axios.get(`https://soyeon-api.onrender.com/api?prompt=${encodeURIComponent(input)}`);
+    } = await axios.get(`https://metoushela-rest-api-koak.onrender.com/api/gpt4o?context=${encodeURIComponent(input)}`);
     const response = data.response;
-    api.sendMessage('༒𝙰ｎ𝚘ｔｈ𝚎ｒ.🌱\n━━━━━━━━━━━\n\n' + response + ' 🎯', event.threadID, event.messageID);
+    api.sendMessage('༒𝙰ｎ𝚘ｔｈ𝚎ｒ.🌱\n━━━━━━━━━━━\n\n' + response + '━━━━━━━━━━━', event.threadID, event.messageID);
   } catch (error) {
     api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
   }
