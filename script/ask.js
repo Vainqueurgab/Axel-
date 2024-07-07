@@ -17,7 +17,7 @@ module.exports.run = async function({
 }) {
   const input = args.join(' ');
   if (!input) {
-    api.sendMessage(`🕙𝙰ｎ𝚘ｔｈ𝚎ｒ.🌱:\n━━━━━━━━━━━\n\n ㋛.𝖯𝗈𝗌𝖾𝗋 𝗆𝗈𝗂 𝗏𝗈𝗍𝗋𝖾 𝗊𝗎𝖾𝗌𝗍𝗂𝗈𝗇.💭`, event.threadID, event.messageID);
+    api.sendMessage(`℘༒𝗔𝗫𝗘𝗟 𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘:\n━━━━━━━━━━━\n\n 𝕊𝔸𝕃𝕌𝕋.𝖯𝗈𝗌𝖾𝗋 𝗆𝗈𝗂 𝗏𝗈𝗍𝗋𝖾 𝗊𝗎𝖾𝗌𝗍𝗂𝗈𝗇.💭`, event.threadID, event.messageID);
     return;
   }
   api.sendMessage(``, event.threadID, event.messageID);
@@ -26,7 +26,7 @@ module.exports.run = async function({
       data
     } = await axios.get(`https://metoushela-rest-api-koak.onrender.com/api/gpt4o?context=${encodeURIComponent(input)}`);
     const response = data.response;
-    api.sendMessage('༒𝙰ｎ𝚘ｔｈ𝚎ｒ.🌱\n━━━━━━━━━━━\n\n' + response + '━━━━━━━━━━━', event.threadID, event.messageID);
+    api.sendMessage('℘༒𝗔𝗫𝗘𝗟 𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘\n━━━━━━━━━━━\n\n' + response + '━━━━━━━━━━━', event.threadID, event.messageID);
   } catch (error) {
     api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
   }
