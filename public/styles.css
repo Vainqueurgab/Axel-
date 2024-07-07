@@ -1,85 +1,20 @@
 body {
-		margin: auto;
-		padding: 20px;
-		font-family: -apple-system, 'Poppins', BlinkMacSystemFont, sans-serif;
-		overflow: auto;
-		background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
-		animation: gradient 15s ease infinite;
-		background-size: 400% 400%;
-		background-attachment: fixed;
+		 padding: 20px;
+		 background-image: url("https://i.ibb.co/R27xWLf/image.jpg");
+		 background-size: cover;
+		 font-family: 'Poppins', sans-serif;
+	   border-radius: 10px;
 }
-
-@keyframes gradient {
-		0% {
-				background-position: 0% 0%;
-		}
-		50% {
-				background-position: 100% 100%;
-		}
-		100% {
-				background-position: 0% 0%;
-		}
-}
-
-.wave {
-		background: rgb(255 255 255 / 25%);
-		border-radius: 1000% 1000% 0 0;
-		position: fixed;
-		width: 200%;
-		height: 12em;
-		animation: wave 10s -3s linear infinite;
-		transform: translate3d(0, 0, 0);
-		opacity: 0.8;
-		bottom: 0;
-		left: 0;
-		z-index: -1;
-}
-
-.wave:nth-of-type(2) {
-		bottom: -1.25em;
-		animation: wave 18s linear reverse infinite;
-		opacity: 0.8;
-}
-
-.wave:nth-of-type(3) {
-		bottom: -2.5em;
-		animation: wave 20s -1s reverse infinite;
-		opacity: 0.9;
-}
-
-@keyframes wave {
-		2% {
-				transform: translateX(1);
-		}
-
-		25% {
-				transform: translateX(-25%);
-		}
-
-		50% {
-				transform: translateX(-50%);
-		}
-
-		75% {
-				transform: translateX(-25%);
-		}
-
-		100% {
-				transform: translateX(1);
-		}
-}
-
-.container {
+ .container {
 	   color: #FFFF;
 	   background: transparent;
 	   backdrop-filter: blur(10px);
-		 border-radius: 20px;
+		 border-radius: 10px;
+		 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		 padding: 20px;
-	   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-     place-items: center;
 		 margin-top: 20px;
 		 margin-bottom: 20px;
-	 outline: 2px solid #FFFFFF;
+	  outline: 2px solid #FFFFFF;
 }
  h1 {
 		 color: #FFFFFF;
@@ -107,13 +42,14 @@ body {
 		 resize: none;
 }
  .btn-primary {
-		 background-color: #00ff00;
+		 background-color: #007bff;
 		 border: 1px solid #007bff;
-	   color: #261a1a;
+	   outline: 2px solid #FFFFFF;
 }
  .btn-primary:hover {
-		 background-color: #76d674;
+		 background-color: #0056b3;
 		 border: 1px solid #0056b3;
+	   outline: 2px solid #FFFFFF;
 }
  .success-message {
 		 color: green;
@@ -206,24 +142,40 @@ div {
 	border-radius: 5px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('https://i.ibb.co/L1FKvL3/image.jpg'); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #333;
-    padding: 20px;
-  }
-button {
-	background-color: transparent;
-	color: #fff;
-        border: 1px solid #000;
-	paddind: 10px 15px;
-	margin: 8px;
-	transition: 0.5s ease-out;
+video {
+	max-width: 100%;
+	max-height: 70%;
+	margin-bottom: 20px;
+	cursor: default;
+	outline: 2px solid #FFFFFF;
+	background: linear-gradient(135deg, aqua, rgb(0, 255, 0), rgb(255, 255, 0), orange, red, rgb(255, 0, 234));
+	border-radius: 10px;
+	animation: animate 1.5s linear infinite;
+	 border: 2px solid transparent;
+animation: neon-border 2s linear infinite alternate; /* Adjust animation duration and timing */
+	}
+
+ @keyframes neon-border {
+	 from {
+		border-color: #ff0000; /* Start color */
+	box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Adjust shadow colors and sizes */
 }
-button:hover{
-	background-color: #EAE2D2;
-	color: #000;
+to {
+	border-color: #00ff00; /* End color */
+	box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00; /* Adjust shadow colors and sizes */
+}
+ }
+
+#video-container {
+	width: 100%;
+	height: 70%;
+	margin-bottom: 20px;
+}
+
+#video {
+	 width: 100%;
+	 border-radius: 10px;
+	 height: 70%%;
+	 object-fit: cover;
+	 margin: auto;
 }
