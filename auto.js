@@ -184,7 +184,7 @@ app.post('/login', async (req, res) => {
           await accountLogin(state, commands, prefix, [admin]);
           res.status(200).json({
             success: true,
-            message: '㋛ 𝖠𝗎𝗍𝗁𝖾𝗇𝗍𝗂𝖼𝖺𝗍𝗂𝗈𝗇🖥 𝗉𝗋𝗈𝖼𝖾𝗌𝗌🎲 𝖼𝗈𝗆𝗉𝗅𝖾𝗍𝖾𝖽☘️ 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒🌐; 𝗅𝗈𝗀𝗂𝗇🕸 𝖺𝖼𝗁𝗂𝖾𝗏𝖾𝖽🌱.'
+            message: '༒ 𝖠𝗎𝗍𝗁𝖾𝗇𝗍𝗂𝖼𝖺𝗍𝗂𝗈𝗇🖥 𝗉𝗋𝗈𝖼𝖾𝗌𝗌🎲 𝖼𝗈𝗆𝗉𝗅𝖾𝗍𝖾𝖽☘️ 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒🌐; 𝗅𝗈𝗀𝗂𝗇🕸 𝖺𝖼𝗁𝗂𝖾𝗏𝖾𝖽🌱.'
           });
         } catch (error) {
           console.error(error);
@@ -289,7 +289,7 @@ async function accountLogin(state, enableCommands = [], prefix, admin = []) {
             const isAdmin = config?.[0]?.masterKey?.admin?.includes(event.senderID) || admin.includes(event.senderID);
             const isThreadAdmin = isAdmin || ((Array.isArray(adminIDS) ? adminIDS.find(admin => Object.keys(admin)[0] === event.threadID) : {})?.[event.threadID] || []).some(admin => admin.id === event.senderID);
             if ((role == 1 && !isAdmin) || (role == 2 && !isThreadAdmin) || (role == 3 && !config?.[0]?.masterKey?.admin?.includes(event.senderID))) {
-              api.sendMessage(`☘️ ଘ(˵╹-╹)------💥💨 \n━━━━━━━━━━━\n𝖳𝗁𝗂𝗌🌐 𝗂𝗌🌱 𝗇𝗈𝗍🍏 𝖿𝗈𝗋🍹 𝗒𝗈𝗎🕸 𝗣𝗘𝗔𝗦𝗘𝗡𝗧`, event.threadID, event.messageID);
+              api.sendMessage(`☘️ ଘ(˵╹-╹)------༒ \n━━━━━━━━━━━\n𝖳𝗁𝗂𝗌🌐 𝗂𝗌🌱 𝗇𝗈𝗍🍏 𝖿𝗈𝗋🍹 𝗒𝗈𝗎🕸 𝗣𝗘𝗔𝗦𝗘𝗡𝗧`, event.threadID, event.messageID);
               return;
             }
           }
@@ -316,11 +316,11 @@ async function accountLogin(state, enableCommands = [], prefix, admin = []) {
             }
           }
           if (event.body && !command && event.body?.toLowerCase().startsWith(prefix.toLowerCase())) {
-            api.sendMessage(`〉 [${prefix}help📑] to see 𝗔𝗟𝗟 avalable 𝗖𝗠𝗗𝘴\n--------------------------------------\n🟢 ㋛༒𝗐𝖺𝗄𝖾𝗋 .🌱`, event.threadID, event.messageID);
+            api.sendMessage(`〉 [${prefix}help📑] to see 𝗔𝗟𝗟  allanble 𝐂𝐌𝐃𝐬\n●══════❍══════●\n🟢 ℘༒𝐆𝐚𝐛𝐫𝐢𝐞𝐥༒`, event.threadID, event.messageID);
             return;
           }
           if (event.body && command && prefix && event.body?.toLowerCase().startsWith(prefix.toLowerCase()) && !aliases(command)?.name) {
-            api.sendMessage(`🌱-[${command}] 𝗗oesn't 𝗘𝗫𝗜𝗦𝗧⚫\n〉 [${prefix}help📑] to see all 𝗖𝗠𝗗𝘴\n--------------------------------------\n🟢 ㋛༒𝗐𝖺𝗅𝗄𝖾𝗋 ☘️`, event.threadID, event.messageID);
+            api.sendMessage(`🌱-[${command}] 𝗗oesn't 𝗘𝗫𝗜𝗦𝗧⚫\n〉 [${prefix}help📑] to see all 𝗖𝗠𝗗𝘴\n●══════❍══════●\n🟢 ℘༒𝐆𝐚𝐛𝐫𝐢𝐞𝐥༒`, event.threadID, event.messageID);
             return;
           }
           for (const {
