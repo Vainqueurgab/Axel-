@@ -33,22 +33,22 @@ module.exports.run = async function({
       eventCommands.forEach((eventCommand, index) => {
         helpMessage += `🎐🔖➳\t${index + 1}﹝${prefix}${eventCommand}﹞\n`;
       });
-      helpMessage += `\n\n▪[📚]𝗣𝗔𝗚𝗘 : [${page}/${Math.ceil(commands.length / pages)}]   \n●══════❍══════●\n[🆔]𝗔𝗨𝗧𝗢𝗕𝗢𝗧 𝗖𝗥𝗘𝗔𝗧𝗘𝗗 𝗕𝗬 : 𝐎𝐋𝐈𝐕𝐄𝐑/𝐆𝐀𝐁𝐑𝐈𝐄𝐋🏅\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/profile.php?id=61555963733226\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/profile.php?id=100095725560244\n●════════❍═════════●\n[⚙️]𝗟𝗜𝗡𝗞 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 : https://axel-copilot.onrender.com\n[⚙️]𝐋𝐈𝐍𝐊 𝐎𝐅𝐅𝐈𝐂𝐈𝐄𝐋 https://axel-copilot.vercel.app/`;
+      helpMessage += `\n\n▪[📚]𝗣𝗔𝗚𝗘 : [${page}/${Math.ceil(commands.length / pages)}]   \n●══════❍══════●\n[🆔]𝗔𝗨𝗧𝗢𝗕𝗢𝗧 𝗖𝗥𝗘𝗔𝗧𝗘𝗗 𝗕𝗬 : 𝐎𝐋𝐈𝐕𝐄𝐑/𝐆𝐀𝐁𝐑𝐈𝐄𝐋🏅\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/profile.php?id=61555963733226\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/profile.php?id=100095725560244\n\n●═══════❍════════●\n[⚙️]𝗟𝗜𝗡𝗞 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 : https://axel-copilot.onrender.com`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else if (!isNaN(input)) {
       const page = parseInt(input);
       const pages = 20;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `▪〉𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝘀 - 𝗟𝗜𝗦𝗧  [🔖]\n●═════❍═════●\n`;
+      let helpMessage = `▪〉𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝘀 - 𝗟𝗜𝗦𝗧  [🏷️]\n●═════❍═════●\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
         helpMessage += `🎐🔖➳ \t${i + 1}▪﹝${prefix}${commands[i]}﹞\n`;
       }
-      helpMessage += '\n℘𝗘𝗩𝗘𝗡𝗧.𝗟𝗜𝗦𝗧- [🏷️]\n●═════❍═════●\n';
+      helpMessage += '\n\n\n';
       eventCommands.forEach((eventCommand, index) => {
         helpMessage += `🎐🔖➳\t${index + 1}▪﹝${prefix}${eventCommand}﹞\n`;
       });
-      helpMessage += `\n▪[📚]𝗣𝗔𝗚𝗘 : [${page}/${Math.ceil(commands.length / pages)}]    \n●══════❍══════●\n[🆔]𝗔𝗨𝗧𝗢𝗕𝗢𝗧 𝗖𝗥𝗘𝗔𝗧𝗘𝗗 𝗕𝗬 : 𝐎𝐋𝐈𝐕𝐄𝐑/𝐆𝐀𝐁𝐑𝐈𝐄𝐋🏅\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/profile.php?id=61555963733226\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/profile.php?id=100095725560244\n[⚙️]𝗟𝗜𝗡𝗞 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 :https://axel-copilot.vercel.app/ `;
+      helpMessage += `\n▪[📚]𝗣𝗔𝗚𝗘 : [${page}/${Math.ceil(commands.length / pages)}]    \n●══════❍══════●\n[🆔]𝗔𝗨𝗧𝗢𝗕𝗢𝗧 𝗖𝗥𝗘𝗔𝗧𝗘𝗗 𝗕𝗬 : 𝐎𝐋𝐈𝐕𝐄𝐑/𝐆𝐀𝐁𝐑𝐈𝐄𝐋🏅\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/profile.php?id=61555963733226\n\n[🗝️]▪𝗟𝗜𝗡𝗞-𝗙𝗕 :https://www.facebook.com/profile.php?id=100095725560244\n[⚙️]𝗟𝗜𝗡𝗞 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 :https://axel-copilot.onrender.com`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else {
       const command = [...Utils.handleEvent, ...Utils.commands].find(([key]) => key.includes(input?.toLowerCase()))?.[1];
