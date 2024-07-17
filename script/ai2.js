@@ -1,30 +1,33 @@
 const axios = require('axios');
-
 module.exports.config = {
-		name: "Ai",
-		version: 1.0,
-		credits: "OtinXSandip",
-		description: "AI",
-		hasPrefix: false,
-		usages: "{pn} [prompt]",
-		aliases: ["gpt4","ai","Olive","arsene","Gabriel","safro"],
-		cooldown: 0,
+  name: 'ai',
+  version: '1.0.0',
+  role: 0,
+  hasPrefix: false,
+  aliases: ['gpt', 'openai'],
+  description: "An AI command powered by GPT-4",
+  usage: "Ai [promot]",
+  credits: 'Megan',
+  cooldown: 3,
 };
-
-module.exports.run = async function ({ api, event, args }) {
-		try {
-				const prompt = args.join(" ");
-				if (!prompt) {
-						await api.sendMessage("℘༒𝗔𝗫𝗘𝗟 𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘:
-\n━━━━━━━━━━━\n\n 𝘴𝘢𝘭𝘶𝘵 , 𝘲𝘶𝘦𝘭 𝘦𝘴𝘵 𝘷𝘰𝘵𝘳𝘦 𝘲𝘶𝘦𝘴𝘵𝘪𝘰𝘯𝘴.💭 ", event.threadID);
-						return;
-				}
-
-				const response = await axios.get(`https://hiroshi-rest-api.replit.app/ai/jailbreak?ask=${encodeURIComponent(input)}`);
-				const answer = response.data.answer;
-
-				await api.sendMessage(answer, event.threadID);
-		} catch (error) {
-				console.error("Error:", error.message);
-		}
+module.exports.run = async function({
+  api,
+  event,
+  args
+}) {
+  const input = args.join(' ');
+  if (!input) {
+    api.sendMessage(`℘༒𝗔𝗫𝗘𝗟-𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘:\n━━━━━━━━━━━\n\n 𝖯𝗈𝗌𝖾𝗋 𝗆𝗈𝗂 𝗏𝗈𝗍𝗋𝖾 𝗊𝗎𝖾𝗌𝗍𝗂𝗈𝗇.💭`, event.threadID, event.messageID);
+    return;
+  }
+  api.sendMessage(``, event.threadID, event.messageID);
+  try {
+    const {
+      data
+    } = await axios.get(`https://hiroshi-rest-api.replit.app/ai/jailbreak?ask=${encodeURIComponent(input)}`);
+    const response = data.response;
+    api.sendMessage('℘༒𝗔𝗫𝗘𝗟-𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘:\n━━━━━━━━━━━\n\n' + response + '━━━━━━━━━━━', event.threadID, event.messageID);
+  } catch (error) {
+    api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
+  }
 };
