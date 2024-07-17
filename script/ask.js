@@ -17,14 +17,14 @@ module.exports.run = async function({
 }) {
   const input = args.join(' ');
   if (!input) {
-    api.sendMessage(`℘༒𝗔𝗫𝗘𝗟 𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘:\n━━━━━━━━━━━\n\n 𝕊𝔸𝕃𝕌𝕋.𝖯𝗈𝗌𝖾𝗋 𝗆𝗈𝗂 𝗏𝗈𝗍𝗋𝖾 𝗊𝗎𝖾𝗌𝗍𝗂𝗈𝗇.💭`, event.threadID, event.messageID);
+    api.sendMessage(`℘༒𝗔𝗫𝗘𝗟 𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘:\n━━━━━━━━━━━\n\n 𝘴𝘢𝘭𝘶𝘵 , 𝘲𝘶𝘦𝘭 𝘦𝘴𝘵 𝘷𝘰𝘵𝘳𝘦 𝘲𝘶𝘦𝘴𝘵𝘪𝘰𝘯𝘴.💭`, event.threadID, event.messageID);
     return;
   }
   api.sendMessage(``, event.threadID, event.messageID);
   try {
     const {
       data
-    } = await axios.get(`https://metoushela-rest-api-koak.onrender.com/api/gpt4o?context=${encodeURIComponent(input)}`);
+    } = await axios.get(`https://apilistbyzcdsph-7twv.onrender.com/gpt4?query=${encodeURIComponent(query)}`);
     const response = data.response;
     api.sendMessage('℘༒𝗔𝗫𝗘𝗟 𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘\n━━━━━━━━━━━\n\n' + response + '━━━━━━━━━━━', event.threadID, event.messageID);
   } catch (error) {
