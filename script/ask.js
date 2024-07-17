@@ -24,7 +24,7 @@ module.exports.run = async function({
   try {
     const {
       data
-    } = await axios.get(`https://apilistbyzcdsph-7twv.onrender.com/gpt4?query=${encodeURIComponent(query)}`);
+    } = await axios.get(`https://api.kenliejugarap.com/blackbox/?text=(text)`);
     const response = data.response;
     api.sendMessage('℘༒𝗔𝗫𝗘𝗟 𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘\n━━━━━━━━━━━\n\n' + response + '━━━━━━━━━━━', event.threadID, event.messageID);
   } catch (error) {
