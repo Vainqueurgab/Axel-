@@ -11,7 +11,7 @@ const fonts = {
     '.': ".", // Handle punctuation marks as needed
     '?': "?",
     '!': "!",
-    // Add other characters as necessary
+    // Add other characters as necessar
 };
 
 module.exports.config = {
