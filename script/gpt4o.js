@@ -1,61 +1,33 @@
 const axios = require('axios');
-
-module.exports = {
+module.exports.config = {
   name: 'gpt4o',
-  description: 'Ask a question and get a response from GPT-4',
-  usage: '<question>',
-  nashPrefix: false,
-  execute(api, event, args, prefix) {
-    try {
-      if (args.length === 0) {
-        api.sendMessage(`
-𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗨𝗦𝗔𝗚𝗘:
-
-➥ *${prefix}gpt4o <question>* -> Get an answer from GPT-4.
-
-*Example:*
-➥ ${prefix}ask What is the capital of France?
-
-Have fun using it, enjoy! ❤️
-Bot Developer: joshua Apostol
-        `, event.threadID);
-        return;
-      }
-
-      const question = encodeURIComponent(args.join(' '));
-      const apiUrl = `https://nash-rest-api.replit.app/freegpt4o8k?question=${question}`;
-
-      api.sendMessage('🤖 Please wait, GPT-4 is thinking...', event.threadID);
-
-      axios.get(apiUrl)
-        .then(response => {
-          const answerData = JSON.parse(response.data.answer);
-
-          if (answerData && answerData.response) {
-            const gptResponse = `
-𝗦𝗢𝗠𝗘 𝗔𝗡𝗦𝗪𝗘𝗥𝗦 𝗙𝗥𝗢𝗠 𝗚𝗣𝗧-𝟰:
-
-➥ 💬Question: ${args.join(' ')}
-━━━━━━━━━━━━━━━━━━━
-➥ 🔍Answer: ${answerData.response.replace('Is this answer helpful to you?', '').trim()}
-━━━━━━━━━━━━━━━━━━━
-
-Have fun using it, enjoy! ❤️
-Bot Developer: joshua apostol
-            `;
-
-            api.sendMessage(gptResponse, event.threadID);
-          } else {
-            api.sendMessage('🤖 No response received from GPT-4.', event.threadID);
-          }
-        })
-        .catch(error => {
-          console.error('Error fetching GPT-4 response:', error.message || error);
-          api.sendMessage('An error occurred while fetching GPT-4 response.', event.threadID);
-        });
-    } catch (error) {
-      console.error('Error executing command:', error.message || error);
-      api.sendMessage('An error occurred while executing the command.', event.threadID);
-    }
-  },
+  version: '1.0.0',
+  role: 0,
+  hasPrefix: false,
+  aliases: ['gpt', 'openai'],
+  description: "An AI command powered by GPT-4",
+  usage: "Ai [promot]",
+  credits: 'Megan',
+  cooldown: 3,
+};
+module.exports.run = async function({
+  api,
+  event,
+  args
+}) {
+  const input = args.join(' ');
+  if (!input) {
+    api.sendMessage(`℘༒𝗔𝗫𝗘𝗟-𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘:\n━━━━━━━━━━━\n\n salut vous êtes sur gpt4o, 𝖯𝗈𝗌𝖾𝗋 𝗆𝗈𝗂 𝗏𝗈𝗍𝗋𝖾 𝗊𝗎𝖾𝗌𝗍𝗂𝗈𝗇.💭`, event.threadID, event.messageID);
+    return;
+  }
+  api.sendMessage(``, event.threadID, event.messageID);
+  try {
+    const {
+      data
+    } = await axios.get(`https://jonellccprojectapis10.adaptable.app/api/gpt4o?context=hi`);
+    const response = data.response;
+    api.sendMessage('℘༒𝗔𝗫𝗘𝗟-𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘:\n━━━━━━━━━━━\n\n' + response + '━━━━━━━━━━━', event.threadID, event.messageID);
+  } catch (error) {
+    api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
+  }
 };
