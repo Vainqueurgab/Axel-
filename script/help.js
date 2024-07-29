@@ -6,7 +6,7 @@ module.exports.config = {
   aliases: ['info'],
   description: "Beginner's guide",
   usage: "Help [page] or [command]",
-  credits: 'aesther',
+  credits: 'Develeoper',
 };
 module.exports.run = async function({
   api,
@@ -21,30 +21,34 @@ module.exports.run = async function({
     const eventCommands = enableCommands[1].handleEvent;
     const commands = enableCommands[0].commands;
     if (!input) {
-      const pages = 100;
+      const pages = 20;
       let page = 1;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = ` 🎐🔖𝗔𝗫𝗘𝗟 𝗖𝗢𝗣𝗜𝗟𝗢𝗧🎐🔖\n━━━━━━━━━━━\n`;
+      let helpMessage = `  🎐🔖𝗔𝗫𝗘𝗟 𝗖𝗢𝗣𝗜𝗟𝗢𝗧🎐🔖\n  𝚌𝚖ｄ:\n━━━━━━━━━━━━━━━\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `🎐🔖➳ \t${i + 1}▪﹝${prefix}${commands[i]}﹞\n`;
+        helpMessage += `🎐🔖\t${i + 1}. ➳ ${prefix}${commands[i]} \n`;
       }
-      
+      helpMessage += '\n';
+      eventCommands.forEach((eventCommand, index) => {
+        helpMessage += `\t${index + 1}. 🎐🔖➳${prefix}${eventCommand} \n`;
       });
-      helpMessage += `\n\n▪[📚]𝗣𝗔𝗚𝗘 : [${page}/${Math.ceil(commands.length / pages)}] \n━━━━━━━━━━━\n[⚙️]𝗟𝗜𝗡𝗞 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 :https://axel-copilot-44xi.onrender.com/`;
+      helpMessage += `\n𝐏𝐀𝐆𝐄 ${page}/${Math.ceil(commands.length / pages)}. 𝗧𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗡𝗲𝘅𝘁 𝗣𝗮𝗴𝗲, 𝗧𝘆𝗽𝗲 '${prefix}𝗵𝗲𝗹𝗽 𝗽𝗮𝗴𝗲🎮 𝗡𝘂𝗺𝗯𝗲𝗿'. 𝗧𝗼 𝗩𝗶𝗲𝘄 𝗶𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻🥉 𝗔𝗯𝗼𝘂𝘁 𝗮 𝗦𝗽𝗲𝗰𝗶𝗳𝗶𝗰 𝗖𝗼𝗺𝗺𝗮𝗻𝗱, 𝗧𝘆𝗽𝗲. '${prefix}𝗛𝗲𝗹𝗽 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗡𝗮𝗺𝗲🎖`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else if (!isNaN(input)) {
       const page = parseInt(input);
-      const pages = 100;
+      const pages = 20;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `▪〉𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝘀 - 𝗟𝗜𝗦𝗧(－－〆)[🔖]\n━━━━━━━━━━━\n`;
+      let helpMessage = `🎐🔖𝗔𝗫𝗘𝗟 𝗖𝗢𝗣𝗜𝗟𝗢𝗧🎐🔖\n 𝚌𝚖ｄ🥢\n━━━━━━━━━━━━━━━\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
-        helpMessage += `🎐🔖➳\t${i + 1}▪﹝${prefix}${commands[i]}﹞\n`;
+        helpMessage += `\t${i + 1}. 🎐🔖➳ ${prefix}${commands[i]} \n`;
       }
-      
+      helpMessage += '\n';
+      eventCommands.forEach((eventCommand, index) => {
+        helpMessage += `\t${index + 1}🎐🔖➳${prefix}${eventCommand} \n`;
       });
-      helpMessage += `\n▪[📚]𝗣𝗔𝗚𝗘 : [${page}/${Math.ceil(commands.length / pages)}] \n━━━━━━━━━━   \n[⚙️]𝗟𝗜𝗡𝗞 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 :https://aesther-anja-autobot-y9pl.onrender.com/`;
+      helpMessage += `\n𝗣𝗮𝗴𝗲 ${page} 𝗢𝗳 ${Math.ceil(commands.length / pages)}\n𝗕𝘁𝘄 𝗖𝗿𝗲𝗮𝘁𝗼𝗿 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗯𝗼𝘁➪➪ ♧ \n➪ https://axel-copilot-44xi.onrender.com`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else {
       const command = [...Utils.handleEvent, ...Utils.commands].find(([key]) => key.includes(input?.toLowerCase()))?.[1];
@@ -87,8 +91,8 @@ module.exports.handleEvent = async function({
     messageID,
     body
   } = event;
-  const message = prefix ? '^- ⩊ -マ₎𐒡☁️\n━━━━━\n🎐🔖𝐩𝐫𝐞𝐟𝐢𝐱 𝐢𝐬: ' + prefix : "𝙎𝙊𝙍𝙍𝙔........(ᵕ—ᴗ—) ♡\n━━━━━━━━━━━\nI don't have 𝚊 𝗣𝗥𝗘𝗙𝗜𝗫";
+  const message = prefix ? '🎐➳𝖲𝗒𝗌𝗍𝖾𝗆 𝗉𝗋𝖾𝖿𝗂𝗑 𝗂𝗌:🎲\n🔖➳y𝗈𝗎𝗋 𝖼𝗁𝖺𝗍𝖻𝗈𝗍 𝗉𝗋𝖾𝖿𝗂𝗑 𝗂𝗌: ' + prefix : "🎐🔖𝗔𝗫𝗘𝗟 𝗖𝗢𝗣𝗜𝗟𝗢𝗧🎐🔖.\n━━━━━━━━━━━━━━━\nSorry i don't have prefix";
   if (body?.toLowerCase().startsWith('prefix')) {
     api.sendMessage(message, threadID, messageID);
   }
-}
+  }
