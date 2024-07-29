@@ -24,7 +24,7 @@ module.exports.run = async function({
   try {
     const {
       data
-    } = await axios.get(`https://jonellccprojectapis10.adaptable.app/api/gpt4o?context=hi`);
+    } = await axios.get(`https://jonellccprojectapis10.adaptable.app/api/gpt4o?context=${encodeURIComponent(input)}`);
     const response = data.response;
     api.sendMessage('℘༒𝗔𝗫𝗘𝗟-𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘:\n━━━━━━━━━━━\n\n' + response + '━━━━━━━━━━━', event.threadID, event.messageID);
   } catch (error) {
