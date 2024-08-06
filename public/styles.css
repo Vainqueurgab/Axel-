@@ -9,7 +9,7 @@ body {
 	   color: #FFFF;
 	   background: transparent;
 	   backdrop-filter: blur(10px);
-		 border-radius: 10px;
+		 border-radius: 20px;
 		 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		 padding: 20px;
 		 margin-top: 20px;
