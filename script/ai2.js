@@ -24,9 +24,9 @@ module.exports.run = async function({
   try {
     const {
       data
-    } = await axios.get(`https://jonellccprojectapis10.adaptable.app/api/gpt4o?context=${encodeURIComponent(input)}`);
+    } = await axios.get(`https://jonellccprojectapis10.adaptable.app/api/ai?query=${encodeURIComponent(input)}`);
     const response = data.response;
-    api.sendMessage('℘༒𝗔𝗫𝗘𝗟-𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘:\n━━━━━━━━━━━\n\n' + response + '━━━━━━━━━━━', event.threadID, event.messageID);
+    api.sendMessage('℘༒𝗔𝗫𝗘𝗟-𝗖𝗢𝗣𝗜𝗟𝗢𝗧༒℘:\n━━━━━━━━━━━\n\n' + response + '\n━━━━━━━━━━━\n 🎤𝗟𝗜𝗡𝗞 𝗔𝗫𝗘𝗟-𝗖𝗢𝗣𝗜𝗟𝗢𝗧: axel-copilot-44xi.onrender.com', event.threadID, event.messageID);
   } catch (error) {
     api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
   }
